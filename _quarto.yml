@@ -4,18 +4,21 @@ project:
   
   
 website:
-  title: "aavanesy.github.io"
+  title: "Arkadi Avanesyan"
   navbar:
     left:
       - href: index.qmd
         text: Home
+      - href: index.qmd
+        text: Courses
       - about.qmd
 
 format:
   html:
-    theme: cosmo
+    theme: flatly
     css: styles.css
     toc: true
+    page-layout: full
 
 editor: visual
 

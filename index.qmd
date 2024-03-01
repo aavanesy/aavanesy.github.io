@@ -1,11 +1,42 @@
 ---
-title: "aavanesy.github.io"
+title: "Arkadi Avanesyan"
+image: Arkadi.jpg
+toc: false
+about: 
+  template: trestles
+  image-shape: rounded
+  image-width: 20em
+  links:
+    - text: LinkedIn
+      href: https://www.linkedin.com/in/arkadiavan/
+    - text: GitHub
+      href: https://github.com/aavanesy
+    - text: Email
+      href: mailto:aavanesy@outlook.com
 ---
 
-This is a Quarto website.
+------------------------------------------------------------------------
 
-To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
+Arkadi Avanesyan is a world-class expert in Finance, Investment Banking, Technology, and Data Science.
 
-```{r}
-1 + 1
-```
+Now a global corporate trainer, he teaches modern tools and technologies in finance and data management, with clients including the World Bank and HSBC.
+
+------------------------------------------------------------------------
+
+#### Education
+
+**MSc in Quantitative Finance** \| Solvay Brussels School of Economics and Management
+
+**BSc in Business Engineering** \| Free University of Brussels
+
+------------------------------------------------------------------------
+
+#### Current Projects
+
+-   Content Creator (Udemy, Starweaver, Coursera)
+
+-   Software Development Consultant at [Longs Peak Advisory Services](https://longspeakadvisory.com/)
+
+-   Lead Developer at [smart payroll](https://smartpayroll.ch/)
+
+------------------------------------------------------------------------

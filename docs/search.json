@@ -2,9 +2,9 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "aavanesy.github.io",
+    "title": "Arkadi Avanesyan",
     "section": "",
-    "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites.\n\n1 + 1\n\n[1] 2"
+    "text": "Arkadi Avanesyan is a world-class expert in Finance, Investment Banking, Technology, and Data Science.\nNow a global corporate trainer, he teaches modern tools and technologies in finance and data management, with clients including the World Bank and HSBC.\n\n\nEducation\nMSc in Quantitative Finance | Solvay Brussels School of Economics and Management\nBSc in Business Engineering | Free University of Brussels\n\n\n\nCurrent Projects\n\nContent Creator (Udemy, Starweaver, Coursera)\nSoftware Development Consultant at Longs Peak Advisory Services\nLead Developer at smart payroll"
   },
   {
     "objectID": "about.html",
@@ -12,5 +12,26 @@
     "title": "About",
     "section": "",
     "text": "About this site\n\n1 + 1\n\n[1] 2"
+  },
+  {
+    "objectID": "index.html#education",
+    "href": "index.html#education",
+    "title": "Arkadi Avanesyan",
+    "section": "Education",
+    "text": "Education\nBrussels, Belgium, MSc in Quantitative Finance | Solvay Brussels School of Economics and Management\nFree University of Brussels | BSc in Business Engineering"
+  },
+  {
+    "objectID": "index.html#experience",
+    "href": "index.html#experience",
+    "title": "Arkadi Avanesyan",
+    "section": "Experience",
+    "text": "Experience\nWengo Analytics | Head Data Scientist | April 2018 - present\nGeoScynce | Chief Analyst | Sept 2012 - April 2018"
+  },
+  {
+    "objectID": "Courses.html",
+    "href": "Courses.html",
+    "title": "Courses",
+    "section": "",
+    "text": "Coursera Profile\n\nContent Creator (Udemy, Starweaver, Coursera)\nSoftware Development Consultant at"
   }
 ]
