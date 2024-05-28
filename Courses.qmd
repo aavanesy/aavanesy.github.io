@@ -1,11 +1,30 @@
 ---
-title: "Courses"
+title: "Online Courses"
+image: Arkadi.jpg
+toc: false
+about: 
+  template: solana
+  image-shape: rounded
+  image-width: 20em
 ---
 
-#### [Coursera Profile](https://www.coursera.org/instructor/~139312072)
+Since 2021 he launched several technical courses on Udemy which has been taken by over 6,500 students.
 
--   Content Creator (Udemy, Starweaver, Coursera)
+He also teaches on Coursera and has over 4,000 students enrolled in his courses.
 
--   Software Development Consultant at
+Through codementor.io, Arkadi has mentored over 850 clients in data science, finance and programming, achieving a 5-star rating and becoming a Featured Mentor for 10 consecutive months in 2020.
 
----
+------------------------------------------------------------------------
+
+[**Udemy Profile**](https://www.udemy.com/user/arkadi-10/)
+
+-   [Programming Automation with R and RStudio - Complete Guide](https://www.udemy.com/course/complete-guide-to-automation-with-r-in-2021/?referralCode=39E8E56D2D13D75FE9DF)
+
+-   [ChatGPT & Copilot for Python & R Data Science Projects](https://www.udemy.com/course/ai-powered-data-science-projects-with-chatgpt-copilot/?referralCode=3E554B3C7C3E5859C201)
+
+- [Minimalist Framework to be Organized and Productive in Tech
+](https://www.udemy.com/course/miminalist-framework-to-be-organized-and-productive-in-tech/?referralCode=F466AD2E75AB662FD278)
+
+[**Coursera Profile**](https://www.coursera.org/instructor/~139312072)
+
+[**Codementor Profile**](https://www.codementor.io/@aavanesy)

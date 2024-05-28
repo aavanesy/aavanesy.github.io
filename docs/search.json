@@ -11,27 +11,13 @@
     "href": "about.html",
     "title": "About",
     "section": "",
-    "text": "About this site\n\n1 + 1\n\n[1] 2"
-  },
-  {
-    "objectID": "index.html#education",
-    "href": "index.html#education",
-    "title": "Arkadi Avanesyan",
-    "section": "Education",
-    "text": "Education\nBrussels, Belgium, MSc in Quantitative Finance | Solvay Brussels School of Economics and Management\nFree University of Brussels | BSc in Business Engineering"
-  },
-  {
-    "objectID": "index.html#experience",
-    "href": "index.html#experience",
-    "title": "Arkadi Avanesyan",
-    "section": "Experience",
-    "text": "Experience\nWengo Analytics | Head Data Scientist | April 2018 - present\nGeoScynce | Chief Analyst | Sept 2012 - April 2018"
+    "text": "Arkadi Avanesyan is a world-class expert in Finance, Investment Banking, Technology, and Data Science.\nNow a global corporate trainer, he teaches modern tools and technologies in finance and data management, with clients including the World Bank and HSBC.\n\n\nEducation\nMSc in Quantitative Finance | Solvay Brussels School of Economics and Management\nBSc in Business Engineering | Free University of Brussels\n\n\n\nCurrent Projects\n\nContent Creator (Udemy, Starweaver, Coursera)\nSoftware Development Consultant at Longs Peak Advisory Services\nLead Developer at smart payroll"
   },
   {
     "objectID": "Courses.html",
     "href": "Courses.html",
-    "title": "Courses",
+    "title": "Online Courses",
     "section": "",
-    "text": "Coursera Profile\n\nContent Creator (Udemy, Starweaver, Coursera)\nSoftware Development Consultant at"
+    "text": "Since 2021 he launched several technical courses on Udemy which has been taken by over 6,500 students.\nHe also teaches on Coursera and has over 4,000 students enrolled in his courses.\nThrough codementor.io, Arkadi has mentored over 850 clients in data science, finance and programming, achieving a 5-star rating and becoming a Featured Mentor for 10 consecutive months in 2020.\n\nUdemy Profile\n\nProgramming Automation with R and RStudio - Complete Guide\nChatGPT & Copilot for Python & R Data Science Projects\nMinimalist Framework to be Organized and Productive in Tech\n\nCoursera Profile\nCodementor Profile"
   }
 ]
