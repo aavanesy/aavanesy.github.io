@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.555">
+<meta name="generator" content="quarto-1.4.550">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Arkadi Avanesyan - Online Courses</title>
+<title>Arkadi Avanesyan</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -33,6 +33,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
@@ -92,12 +93,8 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./Courses.html" aria-current="page"> 
+    <a class="nav-link" href="./Courses.html"> 
 <span class="menu-text">Courses</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./CorporateTrainings.html"> 
-<span class="menu-text">Corporate Training</span></a>
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
@@ -110,40 +107,19 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    
-<!-- main -->
-<div class="quarto-about-solana content column-page">
-  <div class="about-entity">
-    <div class="entity-contents">
-      <header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">Online Courses</h1>
-</div>
-<div class="quarto-title-meta column-page">
-  </div>
-</header> 
-      <div class="about-contents"><main class="content column-page" id="quarto-document-content">
-<p>Since 2021 he launched several technical courses on Udemy which has been taken by over 6,500 students.</p>
-<p>He also teaches on Coursera and has over 4,000 students enrolled in his courses.</p>
-<p>Through codementor.io, Arkadi has mentored over 850 clients in data science, finance and programming, achieving a 5-star rating and becoming a Featured Mentor for 10 consecutive months in 2020.</p>
-<hr>
-<p><a href="https://www.udemy.com/user/arkadi-10/"><strong>Udemy Profile</strong></a></p>
-<ul>
-<li><p><a href="https://www.udemy.com/course/complete-guide-to-automation-with-r-in-2021/?referralCode=39E8E56D2D13D75FE9DF">Programming Automation with R and RStudio - Complete Guide</a></p></li>
-<li><p><a href="https://www.udemy.com/course/ai-powered-data-science-projects-with-chatgpt-copilot/?referralCode=3E554B3C7C3E5859C201">ChatGPT &amp; Copilot for Python &amp; R Data Science Projects</a></p></li>
-<li><p><a href="https://www.udemy.com/course/miminalist-framework-to-be-organized-and-productive-in-tech/?referralCode=F466AD2E75AB662FD278">Minimalist Framework to be Organized and Productive in Tech</a></p></li>
-</ul>
-<p><a href="https://www.coursera.org/instructor/~139312072"><strong>Coursera Profile</strong></a></p>
-<p><a href="https://www.codementor.io/@aavanesy"><strong>Codementor Profile</strong></a></p>
-
-
-</main></div>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
     </div>
-    <img src="Arkadi.jpg" class="about-image
-  rounded " style="width: 20em;">
-  </div>
-</div>
- <!-- /main -->
+<!-- main -->
+<main class="content column-page" id="quarto-document-content">
+
+
+
+
+
+
+
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -164,6 +140,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
   toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
   const isCodeAnnotation = (el) => {
     for (const clz of el.classList) {
       if (clz.startsWith('code-annotation-')) {                     
@@ -216,24 +199,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-    var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp('/' + window.location.host + '/');
-    var isInternal = (href) => {
-        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
-    }
-    // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
-    for (var i=0; i<links.length; i++) {
-      const link = links[i];
-      if (!isInternal(link.href)) {
-        // undo the damage that might have been done by quarto-nav.js in the case of
-        // links that we want to consider external
-        if (link.dataset.originalHref !== undefined) {
-          link.href = link.dataset.originalHref;
-        }
-      }
-    }
   function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
@@ -268,11 +233,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      if (note) {
-        return note.innerHTML;
-      } else {
-        return "";
-      }
+      return note.innerHTML;
     });
   }
   const xrefs = window.document.querySelectorAll('a.quarto-xref');

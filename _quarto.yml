@@ -11,7 +11,8 @@ website:
         text: Home
       - href: Courses.qmd
         text: Courses
-      #- about.qmd
+      - href: CorporateTrainings.qmd
+        text: Corporate Training
 
 format:
   html:

@@ -1,0 +1,29 @@
+---
+title: "Corporate Trainings"
+image: Arkadi.jpg
+toc: false
+about: 
+  template: solana
+  image-shape: rounded
+  image-width: 20em
+---
+
+**My Expertise**
+
+-   **Investment Banking**: Financial Modeling, Risk Management, Portfolio Management, Equity Research, Financial Analysis, Investment Strategies
+
+-   **R for Automation**: Data Manipulation, Workflow Automation, Scripting, Task Scheduling, Data Visualization, API Integration, SQL Database Connectivity, Cloud Technologies
+
+-   **PowerAutomate for Automation**: Workflow Design, Scheduled Flows, Event-triggered Flows, Business Process Automation
+
+-   **Excel for Analytics**: Data Manipulation, Advanced Formulas, Data Visualization, Conditional Formatting, Statistical Analysis, Dashboard Creation, Data Validation, Macros and VBA
+
+-   **Data Science**: Advanced Statistics, Time Series Analysis, Data Mining, Web Scrapping, Data Visualization, SQL Queries, Text Mining, Machine Learning
+
+------------------------------------------------------------------------
+
+**2021-2022 Aigora** \| Supported multiple workshops and seminars on automation and reporting for data science in the US and Europe by assisting with presentation materials, code content and IT cloud infrastructure.
+
+**2022 The World Bank** \| Trained multiple teams in data science, Excel, R, and SQL.
+
+**2023 HSBC** \| Applying Analytics in Banking & Financial Services Program. Trained remotely in the field of advanced analytics and robotic process automation.
