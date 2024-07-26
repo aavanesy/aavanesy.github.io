@@ -10,17 +10,19 @@ about:
 
 **My Expertise**
 
--   **Investment Banking**: Financial Modeling, Risk Management, Portfolio Management, Equity Research, Financial Analysis, Investment Strategies
+-   **Investment Banking: Quantitative Developer (2012–2019) -** Developed, maintained, and rebalanced quantitative proprietary investable indices. Collaborated with major European banks, including Societe Generale, Deutsche Bank, Goldman Sachs, and BNP Paribas.
 
--   **R for Automation**: Data Manipulation, Workflow Automation, Scripting, Task Scheduling, Data Visualization, API Integration, SQL Database Connectivity, Cloud Technologies
+-   **R for Automation (since 2014) -** Learned programming skills to solve business automation challenges for data manipulation, process optimization, and workflow automation.
 
--   **PowerAutomate for Automation**: Workflow Design, Scheduled Flows, Event-triggered Flows, Business Process Automation
+-   **Microsoft Power Automate (Since 2020) -** Proficient in creating no-code solutions for business process automation where solutions with code are not an option.
 
--   **Excel for Analytics**: Data Manipulation, Advanced Formulas, Data Visualization, Conditional Formatting, Statistical Analysis, Dashboard Creation, Data Validation, Macros and VBA
+-   **Excel & VBA for Analytics (Since 2008) -** Strong foundation in Excel and VBA. Expert in data analysis, reporting, and modeling.
 
--   **Data Science**: Advanced Statistics, Time Series Analysis, Data Mining, Web Scrapping, Data Visualization, SQL Queries, Text Mining, Machine Learning
+-   **Data Science (Since 2018) -** Python and R for statistical analysis, machine learning, and data visualization. Developed predictive models and optimized algorithms to drive business decisions.
 
 ------------------------------------------------------------------------
+
+**Notable Clients**
 
 **2021-2022 Aigora** \| Supported multiple workshops and seminars on automation and reporting for data science in the US and Europe by assisting with presentation materials, code content and IT cloud infrastructure.
 

@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.555">
+<meta name="generator" content="quarto-1.4.550">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -125,13 +125,14 @@ ul.task-list li input[type="checkbox"] {
       <div class="about-contents"><main class="content column-page" id="quarto-document-content">
 <p><strong>My Expertise</strong></p>
 <ul>
-<li><p><strong>Investment Banking</strong>: Financial Modeling, Risk Management, Portfolio Management, Equity Research, Financial Analysis, Investment Strategies</p></li>
-<li><p><strong>R for Automation</strong>: Data Manipulation, Workflow Automation, Scripting, Task Scheduling, Data Visualization, API Integration, SQL Database Connectivity, Cloud Technologies</p></li>
-<li><p><strong>PowerAutomate for Automation</strong>: Workflow Design, Scheduled Flows, Event-triggered Flows, Business Process Automation</p></li>
-<li><p><strong>Excel for Analytics</strong>: Data Manipulation, Advanced Formulas, Data Visualization, Conditional Formatting, Statistical Analysis, Dashboard Creation, Data Validation, Macros and VBA</p></li>
-<li><p><strong>Data Science</strong>: Advanced Statistics, Time Series Analysis, Data Mining, Web Scrapping, Data Visualization, SQL Queries, Text Mining, Machine Learning</p></li>
+<li><p><strong>Investment Banking: Quantitative Developer (2012–2019) -</strong> Developed, maintained, and rebalanced quantitative proprietary investable indices. Collaborated with major European banks, including Societe Generale, Deutsche Bank, Goldman Sachs, and BNP Paribas.</p></li>
+<li><p><strong>R for Automation (since 2014) -</strong> Learned programming skills to solve business automation challenges for data manipulation, process optimization, and workflow automation.</p></li>
+<li><p><strong>Microsoft Power Automate (Since 2020) -</strong> Proficient in creating no-code solutions for business process automation where solutions with code are not an option.</p></li>
+<li><p><strong>Excel &amp; VBA for Analytics (Since 2008) -</strong> Strong foundation in Excel and VBA. Expert in data analysis, reporting, and modeling.</p></li>
+<li><p><strong>Data Science (Since 2018) -</strong> Python and R for statistical analysis, machine learning, and data visualization. Developed predictive models and optimized algorithms to drive business decisions.</p></li>
 </ul>
 <hr>
+<p><strong>Notable Clients</strong></p>
 <p><strong>2021-2022 Aigora</strong> | Supported multiple workshops and seminars on automation and reporting for data science in the US and Europe by assisting with presentation materials, code content and IT cloud infrastructure.</p>
 <p><strong>2022 The World Bank</strong> | Trained multiple teams in data science, Excel, R, and SQL.</p>
 <p><strong>2023 HSBC</strong> | Applying Analytics in Banking &amp; Financial Services Program. Trained remotely in the field of advanced analytics and robotic process automation.</p>
@@ -216,24 +217,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-    var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp('/' + window.location.host + '/');
-    var isInternal = (href) => {
-        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
-    }
-    // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
-    for (var i=0; i<links.length; i++) {
-      const link = links[i];
-      if (!isInternal(link.href)) {
-        // undo the damage that might have been done by quarto-nav.js in the case of
-        // links that we want to consider external
-        if (link.dataset.originalHref !== undefined) {
-          link.href = link.dataset.originalHref;
-        }
-      }
-    }
   function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
@@ -268,11 +251,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      if (note) {
-        return note.innerHTML;
-      } else {
-        return "";
-      }
+      return note.innerHTML;
     });
   }
   const xrefs = window.document.querySelectorAll('a.quarto-xref');
