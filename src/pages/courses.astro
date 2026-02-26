@@ -1,0 +1,180 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const udemyCourses = [
+  {
+    title: "Programming Automation with R and RStudio - Complete Guide",
+    url: "https://www.udemy.com/course/complete-guide-to-automation-with-r-in-2021/?referralCode=39E8E56D2D13D75FE9DF",
+    description: "Master automation techniques with R programming",
+  },
+  {
+    title: "ChatGPT & Copilot for Python & R Data Science Projects",
+    url: "https://www.udemy.com/course/ai-powered-data-science-projects-with-chatgpt-copilot/?referralCode=3E554B3C7C3E5859C201",
+    description: "Leverage AI tools for data science workflows",
+  },
+  {
+    title: "Minimalist Framework to be Organized and Productive in Tech",
+    url: "https://www.udemy.com/course/miminalist-framework-to-be-organized-and-productive-in-tech/?referralCode=F466AD2E75AB662FD278",
+    description: "Boost your productivity with proven frameworks",
+  },
+];
+
+const platforms = [
+  {
+    name: "Udemy",
+    url: "https://www.udemy.com/user/arkadi-10/",
+    students: "6,500+",
+    icon: `<path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>`,
+    color: "purple",
+  },
+  {
+    name: "Coursera",
+    url: "https://www.coursera.org/instructor/~139312072",
+    students: "4,000+",
+    icon: `<path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>`,
+    color: "blue",
+  },
+  {
+    name: "Codementor",
+    url: "https://www.codementor.io/@aavanesy",
+    students: "850+",
+    icon: `<path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>`,
+    color: "green",
+  },
+];
+
+const colorClasses = {
+  purple: { bg: "bg-purple-100", text: "text-purple-600", hover: "hover:bg-purple-50" },
+  blue: { bg: "bg-blue-100", text: "text-blue-600", hover: "hover:bg-blue-50" },
+  green: { bg: "bg-green-100", text: "text-green-600", hover: "hover:bg-green-50" },
+};
+---
+
+<Layout title="Online Courses | Arkadi Avanesyan">
+  <!-- Hero -->
+  <section class="pt-32 pb-16 px-6 bg-gradient-to-b from-slate-50 to-white">
+    <div class="max-w-4xl mx-auto text-center">
+      <h1 class="text-4xl lg:text-5xl font-bold text-slate-900 mb-6">
+        Online <span class="gradient-text">Courses</span>
+      </h1>
+      <p class="text-xl text-slate-600 max-w-2xl mx-auto">
+        Since 2021, I've launched several technical courses on major platforms, reaching thousands of students worldwide.
+      </p>
+    </div>
+  </section>
+
+  <!-- Stats -->
+  <section class="py-12 px-6">
+    <div class="max-w-6xl mx-auto">
+      <div class="grid md:grid-cols-3 gap-6">
+        {platforms.map((platform) => {
+          const colors = colorClasses[platform.color as keyof typeof colorClasses];
+          return (
+            <a
+              href={platform.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              class={`card ${colors.hover} group`}
+            >
+              <div class="flex items-center justify-between">
+                <div>
+                  <p class="text-sm text-slate-500 mb-1">{platform.name}</p>
+                  <p class="text-3xl font-bold text-slate-900">{platform.students}</p>
+                  <p class="text-sm text-slate-500">students</p>
+                </div>
+                <div class={`w-14 h-14 rounded-xl ${colors.bg} flex items-center justify-center group-hover:scale-110 transition-transform`}>
+                  <svg class={`w-7 h-7 ${colors.text}`} fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" set:html={platform.icon} />
+                </div>
+              </div>
+              <span class={`${colors.text} text-sm mt-4 inline-flex items-center gap-1 group-hover:gap-2 transition-all`}>
+                View Profile
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </span>
+            </a>
+          );
+        })}
+      </div>
+    </div>
+  </section>
+
+  <!-- Mentoring Highlight -->
+  <section class="py-12 px-6">
+    <div class="max-w-6xl mx-auto">
+      <div class="card bg-gradient-to-br from-green-50 to-emerald-50 border-green-100">
+        <div class="flex flex-col md:flex-row items-center gap-6">
+          <div class="w-16 h-16 rounded-2xl bg-green-100 flex items-center justify-center flex-shrink-0">
+            <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
+            </svg>
+          </div>
+          <div>
+            <h3 class="text-xl font-semibold text-slate-900 mb-2">Featured Mentor on Codementor</h3>
+            <p class="text-slate-600">
+              Through codementor.io, I've mentored over <strong>850 clients</strong> in data science, finance and programming,
+              achieving a <strong>5-star rating</strong> and becoming a Featured Mentor for <strong>10 consecutive months</strong> in 2020.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Udemy Courses -->
+  <section class="py-16 px-6 bg-white">
+    <div class="max-w-6xl mx-auto">
+      <div class="flex items-center justify-between mb-8">
+        <h2 class="section-title mb-0">Udemy Courses</h2>
+        <a
+          href="https://www.udemy.com/user/arkadi-10/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-blue-600 hover:text-blue-700 font-medium text-sm flex items-center gap-1"
+        >
+          View all on Udemy
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+          </svg>
+        </a>
+      </div>
+
+      <div class="grid gap-6">
+        {udemyCourses.map((course, index) => (
+          <a
+            href={course.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="card flex flex-col md:flex-row items-start md:items-center gap-4 group"
+          >
+            <div class="w-12 h-12 rounded-xl bg-purple-100 flex items-center justify-center flex-shrink-0 text-purple-600 font-bold">
+              {index + 1}
+            </div>
+            <div class="flex-1">
+              <h3 class="font-semibold text-slate-900 group-hover:text-blue-600 transition-colors">
+                {course.title}
+              </h3>
+              <p class="text-slate-500 text-sm mt-1">{course.description}</p>
+            </div>
+            <svg class="w-5 h-5 text-slate-400 group-hover:text-blue-600 group-hover:translate-x-1 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-20 px-6">
+    <div class="max-w-4xl mx-auto text-center">
+      <h2 class="text-2xl font-bold text-slate-900 mb-4">Need Custom Training?</h2>
+      <p class="text-slate-600 mb-6">
+        I offer corporate training programs tailored to your organization's needs.
+      </p>
+      <a href="/training" class="btn-primary">
+        Explore Corporate Training
+      </a>
+    </div>
+  </section>
+</Layout>

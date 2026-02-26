@@ -1,0 +1,154 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const expertise = [
+  {
+    title: "Excel & VBA for Analytics",
+    period: "Since 2008",
+    description: "Strong foundation in Excel and VBA. Expert in data analysis, reporting, and modeling.",
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17V7m0 10a2 2 0 01-2 2H5a2 2 0 01-2-2V7a2 2 0 012-2h2a2 2 0 012 2m0 10a2 2 0 002 2h2a2 2 0 002-2M9 7a2 2 0 012-2h2a2 2 0 012 2m0 10V7m0 10a2 2 0 002 2h2a2 2 0 002-2V7a2 2 0 00-2-2h-2a2 2 0 00-2 2" />`,
+    color: "green",
+  },
+  {
+    title: "Investment Banking: Quantitative Development",
+    period: "2012–2019",
+    description: "Developed, maintained, and rebalanced quantitative proprietary investable indices. Collaborated with major European banks, including Societe Generale, Deutsche Bank, Goldman Sachs, and BNP Paribas.",
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />`,
+    color: "blue",
+  },
+  {
+    title: "Data Science",
+    period: "Since 2018",
+    description: "Python and R for statistical analysis, machine learning, and data visualization. Developed predictive models and optimized algorithms to drive business decisions.",
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />`,
+    color: "purple",
+  },
+  {
+    title: "R for Automation",
+    period: "Since 2014",
+    description: "Learned programming skills to solve business automation challenges for data manipulation, process optimization, and workflow automation.",
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />`,
+    color: "orange",
+  },
+  {
+    title: "Microsoft Power Automate",
+    period: "Since 2020",
+    description: "Proficient in creating no-code solutions for business process automation where solutions with code are not an option.",
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />`,
+    color: "cyan",
+  },
+];
+
+const clients = [
+  {
+    year: "2023",
+    company: "HSBC",
+    description: "Applying Analytics in Banking & Financial Services Program. Trained remotely in the field of advanced analytics and robotic process automation.",
+    logo: "HSBC",
+  },
+  {
+    year: "2022",
+    company: "The World Bank",
+    description: "Trained multiple teams in data science, Excel, R, and SQL.",
+    logo: "WB",
+  },
+  {
+    year: "2021-2022",
+    company: "Aigora",
+    description: "Supported multiple workshops and seminars on automation and reporting for data science in the US and Europe by assisting with presentation materials, code content and IT cloud infrastructure.",
+    logo: "AI",
+  },
+];
+
+const colorClasses = {
+  green: { bg: "bg-green-100", text: "text-green-600" },
+  blue: { bg: "bg-blue-100", text: "text-blue-600" },
+  purple: { bg: "bg-purple-100", text: "text-purple-600" },
+  orange: { bg: "bg-orange-100", text: "text-orange-600" },
+  cyan: { bg: "bg-cyan-100", text: "text-cyan-600" },
+};
+---
+
+<Layout title="Corporate Training | Arkadi Avanesyan">
+  <!-- Hero -->
+  <section class="pt-32 pb-16 px-6 bg-gradient-to-b from-slate-50 to-white">
+    <div class="max-w-4xl mx-auto text-center">
+      <h1 class="text-4xl lg:text-5xl font-bold text-slate-900 mb-6">
+        Corporate <span class="gradient-text">Training</span>
+      </h1>
+      <p class="text-xl text-slate-600 max-w-2xl mx-auto">
+        Empower your teams with cutting-edge skills in finance, data science, and automation technologies.
+      </p>
+    </div>
+  </section>
+
+  <!-- Expertise Grid -->
+  <section class="py-16 px-6">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="section-title">My Expertise</h2>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {expertise.map((item) => {
+          const colors = colorClasses[item.color as keyof typeof colorClasses];
+          return (
+            <div class="card">
+              <div class={`w-12 h-12 rounded-xl ${colors.bg} flex items-center justify-center mb-4`}>
+                <svg class={`w-6 h-6 ${colors.text}`} fill="none" stroke="currentColor" viewBox="0 0 24 24" set:html={item.icon} />
+              </div>
+              <div class="flex items-center gap-2 mb-2">
+                <h3 class="font-semibold text-slate-900">{item.title}</h3>
+              </div>
+              <p class="text-xs text-slate-400 mb-3">{item.period}</p>
+              <p class="text-slate-600 text-sm">{item.description}</p>
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  </section>
+
+  <!-- Notable Clients -->
+  <section class="py-16 px-6 bg-white">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="section-title">Notable Clients</h2>
+      <div class="space-y-6">
+        {clients.map((client) => (
+          <div class="card flex flex-col md:flex-row gap-6 items-start">
+            <div class="flex-shrink-0">
+              <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-blue-600 to-cyan-500 flex items-center justify-center text-white font-bold text-lg">
+                {client.logo}
+              </div>
+            </div>
+            <div class="flex-1">
+              <div class="flex flex-wrap items-center gap-3 mb-2">
+                <h3 class="font-semibold text-slate-900 text-lg">{client.company}</h3>
+                <span class="px-3 py-1 bg-slate-100 text-slate-600 text-xs font-medium rounded-full">
+                  {client.year}
+                </span>
+              </div>
+              <p class="text-slate-600">{client.description}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-20 px-6 bg-gradient-to-br from-blue-600 to-cyan-500">
+    <div class="max-w-4xl mx-auto text-center">
+      <h2 class="text-3xl lg:text-4xl font-bold text-white mb-4">Ready to Transform Your Team?</h2>
+      <p class="text-blue-100 text-lg mb-8 max-w-2xl mx-auto">
+        Let's discuss how I can help your organization achieve its training goals with customized programs.
+      </p>
+      <a
+        href="mailto:aavanesy@outlook.com"
+        class="inline-flex items-center gap-2 px-8 py-4 bg-white text-blue-600 font-medium rounded-full transition-all hover:shadow-lg"
+      >
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+        </svg>
+        Get in Touch
+      </a>
+    </div>
+  </section>
+</Layout>
