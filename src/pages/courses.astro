@@ -21,18 +21,18 @@ const udemyCourses = [
 
 const platforms = [
   {
-    name: "Udemy",
-    url: "https://www.udemy.com/user/arkadi-10/",
-    students: "6,500+",
-    icon: `<path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>`,
-    color: "purple",
-  },
-  {
     name: "Coursera",
     url: "https://www.coursera.org/instructor/~139312072",
-    students: "4,000+",
+    students: "70,000+",
     icon: `<path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>`,
     color: "blue",
+  },
+  {
+    name: "Udemy",
+    url: "https://www.udemy.com/user/arkadi-10/",
+    students: "8,000+",
+    icon: `<path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>`,
+    color: "purple",
   },
   {
     name: "Codementor",
@@ -52,19 +52,19 @@ const colorClasses = {
 
 <Layout title="Online Courses | Arkadi Avanesyan">
   <!-- Hero -->
-  <section class="pt-32 pb-16 px-6 bg-gradient-to-b from-slate-50 to-white">
+  <section class="pt-32 pb-6 px-6 bg-gradient-to-b from-slate-50 to-white">
     <div class="max-w-4xl mx-auto text-center">
       <h1 class="text-4xl lg:text-5xl font-bold text-slate-900 mb-6">
         Online <span class="gradient-text">Courses</span>
       </h1>
       <p class="text-xl text-slate-600 max-w-2xl mx-auto">
-        Since 2021, I've launched several technical courses on major platforms, reaching thousands of students worldwide.
+        Teaching quantitative finance and data science to over 80,000 students worldwide across Coursera, Udemy, and Codementor.
       </p>
     </div>
   </section>
 
   <!-- Stats -->
-  <section class="py-12 px-6">
+  <section class="py-6 px-6">
     <div class="max-w-6xl mx-auto">
       <div class="grid md:grid-cols-3 gap-6">
         {platforms.map((platform) => {
@@ -100,7 +100,7 @@ const colorClasses = {
   </section>
 
   <!-- Mentoring Highlight -->
-  <section class="py-12 px-6">
+  <section class="py-6 px-6">
     <div class="max-w-6xl mx-auto">
       <div class="card bg-gradient-to-br from-green-50 to-emerald-50 border-green-100">
         <div class="flex flex-col md:flex-row items-center gap-6">
@@ -113,7 +113,7 @@ const colorClasses = {
             <h3 class="text-xl font-semibold text-slate-900 mb-2">Featured Mentor on Codementor</h3>
             <p class="text-slate-600">
               Through codementor.io, I've mentored over <strong>850 clients</strong> in data science, finance and programming,
-              achieving a <strong>5-star rating</strong> and becoming a Featured Mentor for <strong>10 consecutive months</strong> in 2020.
+              achieving a <strong>4.99/5 rating</strong> and becoming a Featured Mentor for <strong>10 consecutive months</strong> in 2020.
             </p>
           </div>
         </div>
@@ -122,7 +122,7 @@ const colorClasses = {
   </section>
 
   <!-- Udemy Courses -->
-  <section class="py-16 px-6 bg-white">
+  <section class="py-6 px-6 bg-white">
     <div class="max-w-6xl mx-auto">
       <div class="flex items-center justify-between mb-8">
         <h2 class="section-title mb-0">Udemy Courses</h2>
@@ -166,7 +166,7 @@ const colorClasses = {
   </section>
 
   <!-- CTA -->
-  <section class="py-20 px-6">
+  <section class="py-6 px-6">
     <div class="max-w-4xl mx-auto text-center">
       <h2 class="text-2xl font-bold text-slate-900 mb-4">Need Custom Training?</h2>
       <p class="text-slate-600 mb-6">

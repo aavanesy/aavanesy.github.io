@@ -1,0 +1,110 @@
+---
+title: "Analyzing S&P 500 Drawdowns"
+author: "Arkadi Avanesyan"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE)
+```
+
+## Introduction
+
+Understanding historical drawdowns is essential for building crisis-proof portfolios.
+In this tutorial, we'll fetch S&P 500 data and identify every major market crash since 1990
+using the `PerformanceAnalytics` package.
+
+## 1. Install required packages
+
+```{r install, eval=FALSE}
+install.packages(c("quantmod", "PerformanceAnalytics"))
+```
+
+## 2. Fetch S&P 500 data since 1990
+
+```{r fetch-data}
+library(quantmod)
+library(PerformanceAnalytics)
+
+# Fetch S&P 500 data from 1990
+getSymbols("^GSPC", src = "yahoo", from = "1990-01-01")
+
+# Calculate daily returns from adjusted close
+sp500_returns <- dailyReturn(Ad(GSPC))
+colnames(sp500_returns) <- "SP500"
+
+# Quick summary
+head(sp500_returns)
+tail(sp500_returns)
+```
+
+## 3. Visualize the drawdown history
+
+```{r drawdown-chart, fig.width=10, fig.height=6}
+# Plot drawdown chart
+chart.Drawdown(sp500_returns,
+               main = "S&P 500 Drawdowns Since 1990",
+               colorset = "darkred")
+```
+
+This shows every period where the market was below its previous peak.
+The deeper the red, the worse the drawdown.
+
+## 4. Extract the worst drawdowns
+
+```{r worst-drawdowns}
+# Get table of worst drawdowns
+drawdowns <- table.Drawdowns(sp500_returns, top = 10)
+print(drawdowns)
+```
+
+This returns:
+- **From**: Start date of the drawdown
+- **Trough**: Date of the bottom
+- **To**: Recovery date
+- **Depth**: Maximum loss
+- **Length**: Days to reach bottom
+- **Recovery**: Total days underwater
+
+## 5. Calculate key drawdown statistics
+
+```{r statistics}
+# Maximum drawdown
+cat("Maximum Drawdown:", maxDrawdown(sp500_returns), "\n")
+
+# Average drawdown
+cat("Average Drawdown:", AverageDrawdown(sp500_returns), "\n")
+
+# Calmar ratio (return / max drawdown)
+cat("Calmar Ratio:", CalmarRatio(sp500_returns), "\n")
+
+# Pain index (average depth * duration)
+cat("Pain Index:", PainIndex(sp500_returns), "\n")
+```
+
+## 6. Identify crisis periods
+
+```{r major-crashes}
+# Get all drawdowns deeper than 20%
+all_drawdowns <- table.Drawdowns(sp500_returns, top = 20)
+major_crashes <- all_drawdowns[all_drawdowns$Depth < -0.20, ]
+print(major_crashes)
+```
+
+### Major crashes you'll typically see:
+- **2008 Financial Crisis**: ~55% drawdown
+- **2020 COVID Crash**: ~34% drawdown
+- **2000-2002 Dot-com Bust**: ~49% drawdown
+- **2022 Bear Market**: ~25% drawdown
+
+## Key Insight
+
+The S&P 500 has experienced drawdowns exceeding 20% roughly once every 5-7 years.
+A crisis-proof portfolio should be designed to either survive these events or benefit from them.
+This is the foundation of antifragile portfolio construction.
+
+---
+
+**Learn more**: Join my free workshop on building crisis-proof portfolios at
+[aavanesy.github.io/workshops](https://aavanesy.github.io/workshops)

@@ -1,20 +1,53 @@
 ---
 import Layout from "../layouts/Layout.astro";
+
+const platforms = [
+  {
+    name: "Maven",
+    url: "https://maven.com/p/62cecb/build-your-first-crisis-proof-portfolio",
+    description: "Free Lightning Lesson on crisis-proof portfolios",
+    students: "Live Workshop",
+    color: "blue",
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />`,
+  },
+  {
+    name: "Coursera",
+    url: "https://www.coursera.org/instructor/~139312072",
+    description: "Quantitative finance and data science courses",
+    students: "70,000+ students",
+    color: "cyan",
+    icon: `<path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>`,
+  },
+  {
+    name: "Udemy",
+    url: "https://www.udemy.com/user/arkadi-10/",
+    description: "R programming, automation, and productivity",
+    students: "8,000+ students",
+    color: "purple",
+    icon: `<path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>`,
+  },
+];
+
+const colorClasses = {
+  blue: { bg: "bg-blue-100", text: "text-blue-600", border: "border-blue-200" },
+  cyan: { bg: "bg-cyan-100", text: "text-cyan-600", border: "border-cyan-200" },
+  purple: { bg: "bg-purple-100", text: "text-purple-600", border: "border-purple-200" },
+};
 ---
 
 <Layout title="Arkadi Avanesyan | Finance, Data Science & Technology">
   <!-- Hero Section -->
-  <section class="pt-32 pb-20 px-6">
+  <section class="pt-32 pb-6 px-6">
     <div class="max-w-6xl mx-auto">
       <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
         <!-- Profile Image -->
         <div class="flex-shrink-0">
           <div class="relative">
-            <div class="absolute inset-0 bg-gradient-to-br from-blue-500 to-cyan-400 rounded-full blur-2xl opacity-20 scale-110"></div>
+            <div class="absolute inset-0 bg-gradient-to-br from-blue-500 to-cyan-400 rounded-2xl blur-2xl opacity-20 scale-110"></div>
             <img
-              src="/Arkadi.jpg"
+              src="/Arkadi.A.jpg"
               alt="Arkadi Avanesyan"
-              class="relative w-64 h-64 lg:w-80 lg:h-80 rounded-full object-cover shadow-2xl ring-4 ring-white"
+              class="relative w-64 h-64 lg:w-80 lg:h-80 rounded-2xl object-cover shadow-2xl ring-4 ring-white"
             />
           </div>
         </div>
@@ -24,22 +57,24 @@ import Layout from "../layouts/Layout.astro";
           <h1 class="text-4xl lg:text-5xl font-bold text-slate-900 mb-4">
             Hi, I'm <span class="gradient-text">Arkadi Avanesyan</span>
           </h1>
-          <p class="text-xl text-slate-600 mb-6 max-w-2xl">
-            World-class expert in Finance, Investment Banking, Technology, and Data Science.
+          <p class="text-xl text-slate-600 mb-4 max-w-2xl">
+            Quant Developer and Educator in Finance, Data Science, and Technology.
           </p>
-          <p class="text-lg text-slate-500 mb-8 max-w-2xl">
-            Global corporate trainer teaching modern tools and technologies in finance and data science,
-            with clients including <strong class="text-slate-700">The World Bank</strong> and <strong class="text-slate-700">HSBC</strong>.
+          <p class="text-lg text-slate-500 mb-4 max-w-2xl">
+            10+ years building institutional investment products. My work was commercialized by Societe Generale across 60+ countries and used by Goldman Sachs and Deutsche Bank in structured products worth over €1.5 billion.
+          </p>
+          <p class="text-sm text-slate-400 mb-6 max-w-2xl">
+            MSc Quantitative Finance, Solvay Brussels School | BSc Business Engineering, Free University of Brussels
           </p>
           <div class="flex flex-wrap gap-4 justify-center lg:justify-start">
-            <a href="/files/Avanesyan.CV.2024.pdf" class="btn-primary" download>
+            <a href="/files/Avanesyan.CV.2026.pdf" class="btn-primary" download>
               <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
               </svg>
               Download Resume
             </a>
-            <a href="/about" class="btn-secondary">
-              Learn More
+            <a href="mailto:aavanesy@outlook.com" class="btn-secondary">
+              Contact Me
             </a>
           </div>
         </div>
@@ -47,106 +82,52 @@ import Layout from "../layouts/Layout.astro";
     </div>
   </section>
 
-  <!-- Education Section -->
-  <section class="py-20 px-6 bg-white">
+  <!-- Courses Section -->
+  <section class="py-6 px-6 bg-white">
     <div class="max-w-6xl mx-auto">
-      <h2 class="section-title text-center">Education</h2>
-      <div class="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-        <div class="card">
-          <div class="flex items-start gap-4">
-            <div class="w-12 h-12 rounded-xl bg-blue-100 flex items-center justify-center flex-shrink-0">
-              <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path d="M12 14l9-5-9-5-9 5 9 5z" />
-                <path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222" />
-              </svg>
-            </div>
-            <div>
-              <h3 class="font-semibold text-slate-900">MSc in Quantitative Finance</h3>
-              <p class="text-slate-500 mt-1">Solvay Brussels School of Economics and Management</p>
-            </div>
-          </div>
-        </div>
-        <div class="card">
-          <div class="flex items-start gap-4">
-            <div class="w-12 h-12 rounded-xl bg-cyan-100 flex items-center justify-center flex-shrink-0">
-              <svg class="w-6 h-6 text-cyan-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
-              </svg>
-            </div>
-            <div>
-              <h3 class="font-semibold text-slate-900">BSc in Business Engineering</h3>
-              <p class="text-slate-500 mt-1">Free University of Brussels</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Current Projects Section -->
-  <section class="py-20 px-6">
-    <div class="max-w-6xl mx-auto">
-      <h2 class="section-title text-center">Current Projects</h2>
+      <h2 class="section-title text-center">Courses & Workshops</h2>
       <div class="grid md:grid-cols-3 gap-6">
-        <div class="card group">
-          <div class="w-12 h-12 rounded-xl bg-purple-100 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-            <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
-            </svg>
-          </div>
-          <h3 class="font-semibold text-slate-900 mb-2">Content Creator</h3>
-          <p class="text-slate-500 text-sm">Teaching on Udemy, Starweaver, and Coursera platforms</p>
-        </div>
-
-        <a href="https://longspeakadvisory.com/" target="_blank" rel="noopener noreferrer" class="card group">
-          <div class="w-12 h-12 rounded-xl bg-green-100 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-            <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
-            </svg>
-          </div>
-          <h3 class="font-semibold text-slate-900 mb-2">Software Development Consultant</h3>
-          <p class="text-slate-500 text-sm">Longs Peak Advisory Services</p>
-          <span class="text-blue-600 text-sm mt-2 inline-flex items-center gap-1 group-hover:gap-2 transition-all">
-            Visit site
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-            </svg>
-          </span>
-        </a>
-
-        <a href="https://smartpayroll.ch/" target="_blank" rel="noopener noreferrer" class="card group">
-          <div class="w-12 h-12 rounded-xl bg-orange-100 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-            <svg class="w-6 h-6 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
-            </svg>
-          </div>
-          <h3 class="font-semibold text-slate-900 mb-2">Lead Developer</h3>
-          <p class="text-slate-500 text-sm">smart payroll</p>
-          <span class="text-blue-600 text-sm mt-2 inline-flex items-center gap-1 group-hover:gap-2 transition-all">
-            Visit site
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-            </svg>
-          </span>
-        </a>
+        {platforms.map((platform) => {
+          const colors = colorClasses[platform.color as keyof typeof colorClasses];
+          return (
+            <a
+              href={platform.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              class={`card group hover:${colors.border}`}
+            >
+              <div class={`w-12 h-12 rounded-xl ${colors.bg} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform`}>
+                <svg class={`w-6 h-6 ${colors.text}`} fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" set:html={platform.icon} />
+              </div>
+              <h3 class="font-semibold text-slate-900 mb-1">{platform.name}</h3>
+              <p class="text-slate-500 text-sm mb-3">{platform.description}</p>
+              <span class={`${colors.text} text-sm font-medium`}>{platform.students}</span>
+              <span class={`${colors.text} text-sm mt-3 flex items-center gap-1 group-hover:gap-2 transition-all`}>
+                View
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </span>
+            </a>
+          );
+        })}
       </div>
     </div>
   </section>
 
   <!-- CTA Section -->
-  <section class="py-20 px-6 bg-gradient-to-br from-blue-600 to-cyan-500">
-    <div class="max-w-4xl mx-auto text-center">
+  <section class="py-6 px-6 bg-gradient-to-br from-slate-800 to-slate-900">
+    <div class="max-w-4xl mx-auto text-center py-8">
       <h2 class="text-3xl lg:text-4xl font-bold text-white mb-4">Ready to Level Up Your Skills?</h2>
-      <p class="text-blue-100 text-lg mb-8">
-        Explore my online courses or get in touch for corporate training solutions.
+      <p class="text-slate-300 text-lg mb-8">
+        Join my free workshop or explore my online courses.
       </p>
       <div class="flex flex-wrap gap-4 justify-center">
-        <a href="/courses" class="inline-flex items-center gap-2 px-6 py-3 bg-white text-blue-600 font-medium rounded-full transition-all hover:shadow-lg">
-          Browse Courses
+        <a href="/workshops" class="inline-flex items-center gap-2 px-6 py-3 bg-white text-slate-900 font-medium rounded-full transition-all hover:shadow-lg">
+          Free Workshop
         </a>
-        <a href="/training" class="inline-flex items-center gap-2 px-6 py-3 bg-blue-500 text-white font-medium rounded-full transition-all hover:bg-blue-400">
-          Corporate Training
+        <a href="/courses" class="inline-flex items-center gap-2 px-6 py-3 bg-slate-700 text-white font-medium rounded-full transition-all hover:bg-slate-600">
+          Browse Courses
         </a>
       </div>
     </div>
