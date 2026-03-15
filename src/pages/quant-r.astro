@@ -12,7 +12,7 @@ const lessons = [
     slug: "dubai-drop",
     number: "05",
     title: "The Dubai Drop: A 6-Sigma Event",
-    description: "Dubai's stock market dropped 6 standard deviations in 9 days. That shouldn't happen once in the history of the universe.",
+    description: "Dubai's stock market dropped 6 standard deviations in 9 days. A 1-in-1 billion event.",
   },
 ];
 ---
@@ -24,23 +24,23 @@ const lessons = [
         <!-- Sidebar -->
         <aside class="lg:w-64 flex-shrink-0 lg:sticky lg:top-24 lg:self-start space-y-6">
           <!-- Series Introduction -->
-          <div class="p-4 rounded-xl bg-emerald-50 border border-emerald-100">
-            <span class="text-xs text-emerald-600 font-medium uppercase tracking-wide">Free Series</span>
-            <h3 class="font-semibold mt-1 mb-2 text-slate-900">Quant R</h3>
-            <p class="text-slate-600 text-sm">Learn investing truths, verified with R code. New lessons published daily.</p>
+          <div class="p-4 rounded-sm bg-bg-warm border border-border">
+            <span class="text-xs text-accent font-medium uppercase tracking-wide">Free Series</span>
+            <h3 class="font-semibold mt-1 mb-2 text-text-primary">Quant R</h3>
+            <p class="text-text-secondary text-sm">Learn investing truths, verified with R code. New lessons published daily.</p>
           </div>
 
           <!-- Lessons Nav -->
           <div>
-            <h2 class="text-sm font-semibold text-slate-500 uppercase tracking-wide mb-4">Lessons</h2>
+            <h2 class="text-sm font-semibold text-text-muted uppercase tracking-wide mb-4">Lessons</h2>
             <nav class="space-y-2">
               {lessons.map((lesson) => (
                 <a
                   href={`#${lesson.slug}`}
                   data-lesson-link={lesson.slug}
-                  class="lesson-link block px-4 py-3 rounded-xl border text-slate-900 font-medium transition-colors bg-white border-slate-200 hover:bg-emerald-50 hover:border-emerald-100"
+                  class="lesson-link block px-4 py-3 rounded-sm border text-text-primary font-medium transition-colors bg-bg-surface border-border hover:bg-bg-warm hover:border-border"
                 >
-                  <span class="text-emerald-600 text-sm">Lesson {lesson.number}</span>
+                  <span class="text-accent text-sm">Lesson {lesson.number}</span>
                   <span class="block text-sm">{lesson.title}</span>
                 </a>
               ))}
@@ -49,14 +49,14 @@ const lessons = [
 
           <!-- Download Script -->
           <div id="download-section">
-            <h2 class="text-sm font-semibold text-slate-500 uppercase tracking-wide mb-4">Download</h2>
+            <h2 class="text-sm font-semibold text-text-muted uppercase tracking-wide mb-4">Download</h2>
             <a
               id="download-link-01"
               href="/files/quant-r-lesson-01.R"
               download
-              class="hidden items-center gap-2 px-4 py-3 rounded-xl bg-slate-100 text-slate-700 font-medium hover:bg-slate-200 transition-colors"
+              class="hidden items-center gap-2 px-4 py-3 rounded-sm bg-bg-subtle text-text-secondary font-medium hover:bg-bg-warm transition-colors"
             >
-              <svg class="w-5 h-5 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg class="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
               </svg>
               <span class="text-sm">Lesson 01 R Script</span>
@@ -65,9 +65,9 @@ const lessons = [
               id="download-link-05"
               href="/files/quant-r-lesson-05.R"
               download
-              class="hidden items-center gap-2 px-4 py-3 rounded-xl bg-slate-100 text-slate-700 font-medium hover:bg-slate-200 transition-colors"
+              class="hidden items-center gap-2 px-4 py-3 rounded-sm bg-bg-subtle text-text-secondary font-medium hover:bg-bg-warm transition-colors"
             >
-              <svg class="w-5 h-5 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg class="w-5 h-5 text-red-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
               </svg>
               <span class="text-sm">Lesson 05 R Script</span>
@@ -80,63 +80,63 @@ const lessons = [
           <!-- Page Header -->
           <div class="mb-8">
             <div class="flex items-center gap-2 mb-2">
-              <span class="px-2 py-1 bg-emerald-100 text-emerald-700 text-xs font-medium rounded">R + Finance</span>
-              <span class="text-slate-400 text-sm">New lessons daily</span>
+              <span class="px-2 py-1 bg-bg-subtle text-accent text-xs font-medium rounded-sm">R + Finance</span>
+              <span class="text-text-muted text-sm">New lessons daily</span>
             </div>
-            <h1 class="text-3xl font-bold text-slate-900 mb-2">Quant R: Investing Truths Verified with Code</h1>
-            <p class="text-slate-600">
+            <h1 class="text-3xl font-bold text-text-primary mb-2">Quant R: Investing Truths Verified with Code</h1>
+            <p class="text-text-secondary">
               Every lesson answers ONE investing question that keeps people up at night. The R code PROVES the answer is true.
             </p>
           </div>
 
           <!-- Lesson 01 Content -->
-          <article id="average-returns-lie" data-lesson="average-returns-lie" class="lesson-content hidden card border-l-4 border-l-emerald-500">
+          <article id="average-returns-lie" data-lesson="average-returns-lie" class="lesson-content hidden card border-l-4 border-l-accent">
             <div class="flex items-center gap-3 mb-6">
-              <div class="w-12 h-12 rounded-xl bg-emerald-100 flex items-center justify-center">
-                <span class="text-emerald-600 font-bold text-lg">01</span>
+              <div class="w-8 h-8 rounded-sm bg-bg-subtle flex items-center justify-center">
+                <span class="text-accent font-bold text-lg">01</span>
               </div>
               <div>
-                <span class="text-sm text-emerald-600 font-medium">Lesson 01</span>
-                <h2 class="text-2xl font-bold text-slate-900">Why "Average Returns" Are a Lie</h2>
+                <span class="text-sm text-accent font-medium">Lesson 01</span>
+                <h2 class="text-2xl font-bold text-text-primary">Why "Average Returns" Are a Lie</h2>
               </div>
             </div>
 
             <!-- The Hook -->
-            <div class="bg-slate-900 text-white rounded-xl p-6 mb-8">
+            <div class="bg-bg-dark-deep text-[#D5C9B8] rounded-sm p-6 mb-8">
               <p class="text-xl font-medium mb-2">Your broker says you earned 0% last year.</p>
-              <p class="text-xl font-medium text-emerald-400">You actually LOST 25%.</p>
+              <p class="text-xl font-medium text-accent">You actually LOST 25%.</p>
             </div>
 
             <!-- The Concept -->
             <div class="mb-8">
-              <h3 class="text-lg font-semibold text-slate-900 mb-3">The Concept</h3>
-              <p class="text-slate-600 mb-4">
+              <h3 class="text-lg font-semibold text-text-primary mb-3">The Concept</h3>
+              <p class="text-text-secondary mb-4">
                 Wall Street reports "average returns" because it sounds better than reality. If you gain 50% then lose 50%, your <strong>AVERAGE</strong> return is 0%. But your <strong>ACTUAL</strong> return is -25%.
               </p>
-              <p class="text-slate-600">
-                This isn't a rounding error — it's the difference between retiring comfortably and running out of money.
+              <p class="text-text-secondary">
+                This is not a rounding error. It is the difference between retiring comfortably and running out of money.
               </p>
             </div>
 
             <!-- The Math Example -->
-            <div class="mb-8 bg-slate-50 rounded-xl p-6">
-              <h3 class="text-lg font-semibold text-slate-900 mb-4">The Math They Don't Show You</h3>
+            <div class="mb-8 bg-bg-warm rounded-sm p-6">
+              <h3 class="text-lg font-semibold text-text-primary mb-4">The Math They Don't Show You</h3>
               <div class="grid md:grid-cols-2 gap-6">
                 <div>
-                  <p class="text-sm text-slate-500 mb-2">What your broker reports:</p>
-                  <ul class="space-y-1 text-slate-700">
-                    <li>Year 1: <span class="text-emerald-600 font-medium">+50%</span></li>
-                    <li>Year 2: <span class="text-red-600 font-medium">-50%</span></li>
-                    <li class="pt-2 border-t border-slate-200 font-semibold">Average: 0%</li>
+                  <p class="text-sm text-text-muted mb-2">What your broker reports:</p>
+                  <ul class="space-y-1 text-text-secondary">
+                    <li>Year 1: <span class="text-primary font-medium">+50%</span></li>
+                    <li>Year 2: <span class="text-red-700 font-medium">-50%</span></li>
+                    <li class="pt-2 border-t border-border font-semibold">Average: 0%</li>
                   </ul>
                 </div>
                 <div>
-                  <p class="text-sm text-slate-500 mb-2">What actually happened:</p>
-                  <ul class="space-y-1 text-slate-700">
+                  <p class="text-sm text-text-muted mb-2">What actually happened:</p>
+                  <ul class="space-y-1 text-text-secondary">
                     <li>Start: $100</li>
                     <li>After Year 1: $150</li>
                     <li>After Year 2: $75</li>
-                    <li class="pt-2 border-t border-slate-200 font-semibold text-red-600">You lost $25 on a "zero percent return"</li>
+                    <li class="pt-2 border-t border-border font-semibold text-red-700">You lost $25 on a "zero percent return"</li>
                   </ul>
                 </div>
               </div>
@@ -144,33 +144,27 @@ const lessons = [
 
             <!-- What the R Code Proves -->
             <div class="mb-8">
-              <h3 class="text-lg font-semibold text-slate-900 mb-3">What the R Code Proves</h3>
-              <ul class="space-y-2 text-slate-600">
+              <h3 class="text-lg font-semibold text-text-primary mb-3">What the R Code Proves</h3>
+              <ul class="space-y-2 text-text-secondary">
                 <li class="flex items-start gap-2">
-                  <svg class="w-5 h-5 text-emerald-500 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
-                  </svg>
+                  <span class="text-accent mt-0.5 flex-shrink-0 font-bold">&mdash;</span>
                   <span>Generate returns that average 0% but produce negative wealth</span>
                 </li>
                 <li class="flex items-start gap-2">
-                  <svg class="w-5 h-5 text-emerald-500 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
-                  </svg>
+                  <span class="text-accent mt-0.5 flex-shrink-0 font-bold">&mdash;</span>
                   <span>Show the gap between arithmetic mean and geometric mean</span>
                 </li>
                 <li class="flex items-start gap-2">
-                  <svg class="w-5 h-5 text-emerald-500 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
-                  </svg>
-                  <span>Demonstrate the "volatility tax" — how swings destroy wealth</span>
+                  <span class="text-accent mt-0.5 flex-shrink-0 font-bold">&mdash;</span>
+                  <span>Demonstrate the "volatility tax": how swings destroy wealth</span>
                 </li>
               </ul>
             </div>
 
             <!-- The R Code -->
             <div class="mb-8">
-              <h3 class="text-lg font-semibold text-slate-900 mb-3">The R Code</h3>
-              <pre class="bg-slate-900 text-slate-100 rounded-xl p-4 overflow-x-auto text-sm"><code># The volatility lie - Lesson 01
+              <h3 class="text-lg font-semibold text-text-primary mb-3">The R Code</h3>
+              <pre class="bg-bg-dark-deep text-[#E0D5C5] rounded-sm p-4 overflow-x-auto text-sm" aria-label="R code: the volatility lie demonstration"><code># The volatility lie - Lesson 01
 # Why "Average Returns" Are a Lie
 
 # Simple example: +50% then -50%
@@ -209,19 +203,19 @@ cat("Steady portfolio (4% steady): $", round(tail(steady_wealth, 1)), "\n")</cod
             </div>
 
             <!-- Key Takeaway -->
-            <div class="bg-emerald-50 border border-emerald-200 rounded-xl p-6 mb-8">
-              <h3 class="text-lg font-semibold text-emerald-800 mb-2">Key Takeaway</h3>
-              <p class="text-emerald-700">
+            <div class="bg-bg-warm border border-border rounded-sm p-6 mb-8">
+              <h3 class="text-lg font-semibold text-text-primary mb-2">Key Takeaway</h3>
+              <p class="text-text-secondary">
                 <strong>Ask for GEOMETRIC returns, not averages.</strong> The arithmetic mean lies to you. The geometric mean tells you what you actually keep.
               </p>
             </div>
 
             <!-- Download -->
-            <div class="border-t border-slate-200 pt-6">
+            <div class="border-t border-border pt-6">
               <a
                 href="/files/quant-r-lesson-01.R"
                 download
-                class="inline-flex items-center gap-2 px-4 py-2 bg-emerald-100 text-emerald-700 font-medium rounded-lg hover:bg-emerald-200 transition-colors text-sm"
+                class="inline-flex items-center gap-2 px-4 py-2 bg-bg-subtle text-text-secondary font-medium rounded-sm hover:bg-bg-warm transition-colors text-sm"
               >
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
@@ -232,127 +226,119 @@ cat("Steady portfolio (4% steady): $", round(tail(steady_wealth, 1)), "\n")</cod
           </article>
 
           <!-- Lesson 05: Dubai Drop -->
-          <article id="dubai-drop" data-lesson="dubai-drop" class="lesson-content hidden card border-l-4 border-l-red-500">
+          <article id="dubai-drop" data-lesson="dubai-drop" class="lesson-content hidden card border-l-4 border-l-red-700">
             <div class="flex items-center gap-3 mb-6">
-              <div class="w-12 h-12 rounded-xl bg-red-100 flex items-center justify-center">
-                <span class="text-red-600 font-bold text-lg">05</span>
+              <div class="w-8 h-8 rounded-sm bg-red-100 flex items-center justify-center">
+                <span class="text-red-700 font-bold text-lg">05</span>
               </div>
               <div>
-                <span class="text-sm text-red-600 font-medium">Lesson 05</span>
-                <h2 class="text-2xl font-bold text-slate-900">The Dubai Drop: A 6-Sigma Event</h2>
+                <span class="text-sm text-red-700 font-medium">Lesson 05</span>
+                <h2 class="text-2xl font-bold text-text-primary">The Dubai Drop: A 6-Sigma Event</h2>
               </div>
             </div>
 
             <!-- The Hook -->
-            <div class="bg-slate-900 text-white rounded-xl p-6 mb-8">
+            <div class="bg-bg-dark-deep text-[#D5C9B8] rounded-sm p-6 mb-8">
               <p class="text-xl font-medium mb-2">Dubai's stock market dropped 6 standard deviations in 9 days.</p>
               <p class="text-xl font-medium text-red-400">A 1-in-1 billion event. It shouldn't happen once in the history of the universe.</p>
             </div>
 
             <!-- The Concept -->
             <div class="mb-8">
-              <h3 class="text-lg font-semibold text-slate-900 mb-3">The Concept</h3>
-              <p class="text-slate-600 mb-4">
+              <h3 class="text-lg font-semibold text-text-primary mb-3">The Concept</h3>
+              <p class="text-text-secondary mb-4">
                 Between February 28 and March 9, 2026, the Dubai Financial Market General Index (DFMGI) dropped <strong>14.1%</strong>. Using 5 years of historical data, this represents a <strong>6 standard deviation</strong> move.
               </p>
-              <p class="text-slate-600">
-                Under normal distribution assumptions, a 6-sigma event should occur roughly once every billion observations. Markets regularly produce these "impossible" events — because returns aren't normally distributed.
+              <p class="text-text-secondary">
+                Under normal distribution assumptions, a 6-sigma event should occur roughly once every billion observations. Markets regularly produce these "impossible" events because returns are not normally distributed.
               </p>
             </div>
 
             <!-- The Data -->
-            <div class="mb-8 bg-slate-50 rounded-xl p-6">
-              <h3 class="text-lg font-semibold text-slate-900 mb-4">The Numbers</h3>
+            <div class="mb-8 bg-bg-warm rounded-sm p-6">
+              <h3 class="text-lg font-semibold text-text-primary mb-4">The Numbers</h3>
               <div class="overflow-x-auto">
                 <table class="w-full text-sm">
                   <thead>
-                    <tr class="border-b border-slate-200">
-                      <th class="text-left py-2 text-slate-500">Metric</th>
-                      <th class="text-right py-2 text-slate-500">Value</th>
+                    <tr class="border-b border-border">
+                      <th class="text-left py-2 text-text-muted">Metric</th>
+                      <th class="text-right py-2 text-text-muted">Value</th>
                     </tr>
                   </thead>
-                  <tbody class="text-slate-700">
-                    <tr class="border-b border-slate-100">
+                  <tbody class="text-text-secondary">
+                    <tr class="border-b border-border">
                       <td class="py-2">Historical 9-day mean</td>
                       <td class="text-right font-medium">+0.63%</td>
                     </tr>
-                    <tr class="border-b border-slate-100">
+                    <tr class="border-b border-border">
                       <td class="py-2">Historical 9-day volatility (SD)</td>
                       <td class="text-right font-medium">2.45%</td>
                     </tr>
-                    <tr class="border-b border-slate-100">
+                    <tr class="border-b border-border">
                       <td class="py-2">Feb 28 - Mar 9 return</td>
-                      <td class="text-right font-medium text-red-600">-14.1%</td>
+                      <td class="text-right font-medium text-red-700">-14.1%</td>
                     </tr>
                     <tr>
                       <td class="py-2">Standard deviations</td>
-                      <td class="text-right font-bold text-red-600">6.0 σ</td>
+                      <td class="text-right font-bold text-red-700">6.0 &sigma;</td>
                     </tr>
                   </tbody>
                 </table>
               </div>
-              <p class="text-slate-500 text-xs mt-4">Note: Yahoo Finance data has gaps. Depending on NA handling, sigma ranges 5.5-6.5.</p>
+              <p class="text-text-muted text-xs mt-4">Note: Yahoo Finance data has gaps. Depending on NA handling, sigma ranges 5.5-6.5.</p>
             </div>
 
             <!-- What the R Code Proves -->
             <div class="mb-8">
-              <h3 class="text-lg font-semibold text-slate-900 mb-3">What the R Code Does</h3>
-              <ul class="space-y-2 text-slate-600">
+              <h3 class="text-lg font-semibold text-text-primary mb-3">What the R Code Does</h3>
+              <ul class="space-y-2 text-text-secondary">
                 <li class="flex items-start gap-2">
-                  <svg class="w-5 h-5 text-emerald-500 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
-                  </svg>
+                  <span class="text-accent mt-0.5 flex-shrink-0 font-bold">&mdash;</span>
                   <span>Fetches 5 years of DFMGI.AE data from Yahoo Finance</span>
                 </li>
                 <li class="flex items-start gap-2">
-                  <svg class="w-5 h-5 text-emerald-500 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
-                  </svg>
+                  <span class="text-accent mt-0.5 flex-shrink-0 font-bold">&mdash;</span>
                   <span>Computes rolling 9-day returns and historical volatility</span>
                 </li>
                 <li class="flex items-start gap-2">
-                  <svg class="w-5 h-5 text-emerald-500 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
-                  </svg>
+                  <span class="text-accent mt-0.5 flex-shrink-0 font-bold">&mdash;</span>
                   <span>Calculates z-score and probability under normal distribution</span>
                 </li>
                 <li class="flex items-start gap-2">
-                  <svg class="w-5 h-5 text-emerald-500 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
-                  </svg>
+                  <span class="text-accent mt-0.5 flex-shrink-0 font-bold">&mdash;</span>
                   <span>Visualizes the drop against the historical distribution</span>
                 </li>
               </ul>
             </div>
 
             <!-- Historical Context -->
-            <div class="mb-8 bg-red-50 rounded-xl p-6">
-              <h3 class="text-lg font-semibold text-slate-900 mb-3">Fat Tails Are Features, Not Bugs</h3>
-              <p class="text-slate-600 mb-4">Markets regularly produce "impossible" events:</p>
-              <ul class="space-y-2 text-slate-700 text-sm">
+            <div class="mb-8 bg-red-50 rounded-sm p-6">
+              <h3 class="text-lg font-semibold text-text-primary mb-3">Fat Tails Are Features, Not Bugs</h3>
+              <p class="text-text-secondary mb-4">Markets regularly produce "impossible" events:</p>
+              <ul class="space-y-2 text-text-secondary text-sm">
                 <li><strong>1987 Black Monday:</strong> 22 standard deviations</li>
                 <li><strong>2008 Lehman collapse:</strong> Multiple 5+ sigma days</li>
                 <li><strong>2020 COVID crash:</strong> 12 sigma single-day moves</li>
               </ul>
-              <p class="text-slate-600 mt-4">
+              <p class="text-text-secondary mt-4">
                 If your risk model says "this can't happen," the market will prove it wrong.
               </p>
             </div>
 
             <!-- Key Takeaway -->
-            <div class="bg-emerald-50 border border-emerald-200 rounded-xl p-6 mb-8">
-              <h3 class="text-lg font-semibold text-emerald-800 mb-2">Key Takeaway</h3>
-              <p class="text-emerald-700">
-                <strong>Don't trust normal distribution for tail risk.</strong> Fat tails aren't anomalies — they're features of financial markets. Build portfolios that survive "impossible" events.
+            <div class="bg-bg-warm border border-border rounded-sm p-6 mb-8">
+              <h3 class="text-lg font-semibold text-text-primary mb-2">Key Takeaway</h3>
+              <p class="text-text-secondary">
+                <strong>Do not trust normal distribution for tail risk.</strong> Fat tails are not anomalies. They are features of financial markets. Build portfolios that survive "impossible" events.
               </p>
             </div>
 
             <!-- Download -->
-            <div class="border-t border-slate-200 pt-6">
+            <div class="border-t border-border pt-6">
               <a
                 href="/files/quant-r-lesson-05.R"
                 download
-                class="inline-flex items-center gap-2 px-4 py-2 bg-red-100 text-red-700 font-medium rounded-lg hover:bg-red-200 transition-colors text-sm"
+                class="inline-flex items-center gap-2 px-4 py-2 bg-red-100 text-red-700 font-medium rounded-sm hover:bg-red-200 transition-colors text-sm"
               >
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
@@ -362,41 +348,6 @@ cat("Steady portfolio (4% steady): $", round(tail(steady_wealth, 1)), "\n")</cod
             </div>
           </article>
 
-          <!-- Bottom CTA -->
-          <div class="mt-8 card bg-slate-900 text-white border-0 overflow-hidden">
-            <div class="flex flex-col lg:flex-row items-center gap-8">
-              <div class="lg:w-1/3 flex-shrink-0">
-                <img
-                  src="/Arkadi.L1.png"
-                  alt="Arkadi Avanesyan"
-                  class="w-full max-w-[240px] mx-auto rounded-xl"
-                />
-              </div>
-              <div class="lg:w-2/3 text-center lg:text-left">
-                <p class="text-emerald-400 text-sm font-medium mb-2">Free Live Workshop</p>
-                <h2 class="text-2xl font-bold mb-3">Build Your First Crisis-Proof Portfolio</h2>
-                <p class="text-slate-300 mb-4">
-                  Learn the framework I developed over 10 years at Goldman Sachs and Societe Generale. Understand why most portfolios fail in crashes — and how to build one that doesn't.
-                </p>
-                <ul class="text-slate-400 text-sm mb-6 space-y-1">
-                  <li>Classify any asset as Fragile, Robust, or Antifragile</li>
-                  <li>Identify structural flaws that cause panic-selling</li>
-                  <li>45 minutes + live Q&A</li>
-                </ul>
-                <a
-                  href="https://maven.com/p/62cecb/build-your-first-crisis-proof-portfolio"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="inline-flex items-center gap-2 bg-emerald-500 text-white font-semibold px-6 py-3 rounded-full hover:bg-emerald-400 transition-colors"
-                >
-                  Register Free
-                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                  </svg>
-                </a>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
     </div>
@@ -417,13 +368,13 @@ cat("Steady portfolio (4% steady): $", round(tail(steady_wealth, 1)), "\n")</cod
 
       // Update sidebar active state
       document.querySelectorAll('.lesson-link').forEach(el => {
-        el.classList.remove('bg-emerald-50', 'border-emerald-100');
-        el.classList.add('bg-white', 'border-slate-200');
+        el.classList.remove('bg-bg-warm');
+        el.classList.add('bg-bg-surface');
       });
       const activeLink = document.querySelector(`[data-lesson-link="${slug}"]`);
       if (activeLink) {
-        activeLink.classList.remove('bg-white', 'border-slate-200');
-        activeLink.classList.add('bg-emerald-50', 'border-emerald-100');
+        activeLink.classList.remove('bg-bg-surface');
+        activeLink.classList.add('bg-bg-warm');
       }
 
       // Update download links

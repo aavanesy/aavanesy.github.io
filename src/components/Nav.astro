@@ -1,9 +1,7 @@
 ---
 const navLinks = [
-  { href: "/", label: "Home" },
-  { href: "/workshops", label: "Workshops" },
   { href: "/courses", label: "Courses" },
-  { href: "/training", label: "Corporate Training" },
+  { href: "/training", label: "Training" },
   { href: "/tutorials", label: "Tutorials" },
   { href: "/quant-r", label: "Quant R" },
 ];
@@ -11,23 +9,22 @@ const navLinks = [
 const currentPath = Astro.url.pathname;
 ---
 
-<header class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-lg border-b border-slate-100">
-  <nav class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-    <a href="/" class="font-bold text-xl text-slate-900 hover:text-blue-600 transition-colors">
-      Arkadi Avanesyan
+<header id="site-header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b border-transparent" data-scrolled="false">
+  <nav class="max-w-6xl mx-auto px-6 h-14 flex items-center justify-between">
+    <a href="/" class="font-serif italic text-lg nav-logo transition-colors hover:text-accent">
+      A. Avanesyan
     </a>
 
-    <!-- Desktop Navigation -->
     <ul class="hidden md:flex items-center gap-8">
       {navLinks.map((link) => (
         <li>
           <a
             href={link.href}
             class:list={[
-              "text-sm font-medium transition-colors",
+              "text-xs uppercase tracking-widest font-medium transition-colors nav-link",
               currentPath === link.href || (link.href !== "/" && currentPath.startsWith(link.href))
-                ? "text-blue-600"
-                : "text-slate-600 hover:text-slate-900",
+                ? "text-accent"
+                : "nav-link-default",
             ]}
           >
             {link.label}
@@ -36,30 +33,30 @@ const currentPath = Astro.url.pathname;
       ))}
     </ul>
 
-    <!-- Mobile Menu Button -->
     <button
       id="mobile-menu-btn"
-      class="md:hidden p-2 text-slate-600 hover:text-slate-900"
+      class="md:hidden p-2 text-text-secondary hover:text-text-primary"
       aria-label="Toggle menu"
+      aria-expanded="false"
+      aria-controls="mobile-menu"
     >
-      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16" />
       </svg>
     </button>
   </nav>
 
-  <!-- Mobile Navigation -->
-  <div id="mobile-menu" class="hidden md:hidden border-t border-slate-100 bg-white">
+  <div id="mobile-menu" class="hidden md:hidden border-t border-border/30 bg-bg-base/95 backdrop-blur-lg">
     <ul class="px-6 py-4 space-y-4">
       {navLinks.map((link) => (
         <li>
           <a
             href={link.href}
             class:list={[
-              "block text-sm font-medium transition-colors",
+              "block text-xs uppercase tracking-widest font-medium transition-colors",
               currentPath === link.href || (link.href !== "/" && currentPath.startsWith(link.href))
-                ? "text-blue-600"
-                : "text-slate-600 hover:text-slate-900",
+                ? "text-accent"
+                : "text-text-muted hover:text-text-primary",
             ]}
           >
             {link.label}
@@ -70,11 +67,96 @@ const currentPath = Astro.url.pathname;
   </div>
 </header>
 
+<style>
+  /* Nav states */
+  header[data-scrolled="false"] {
+    background: transparent;
+  }
+  header[data-scrolled="false"] .nav-logo {
+    color: #D5C9B8;
+  }
+  header[data-scrolled="false"] .nav-link-default {
+    color: #8A7D6B;
+  }
+  header[data-scrolled="false"] .nav-link-default:hover {
+    color: #D5C9B8;
+  }
+  header[data-scrolled="false"] #mobile-menu-btn {
+    color: #8A7D6B;
+  }
+
+  header[data-scrolled="true"] {
+    background: rgba(240, 233, 222, 0.85);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom-color: rgba(207, 195, 176, 0.5);
+  }
+  header[data-scrolled="true"] .nav-logo {
+    color: var(--color-text-primary);
+  }
+  header[data-scrolled="true"] .nav-link-default {
+    color: var(--color-text-muted);
+  }
+  header[data-scrolled="true"] .nav-link-default:hover {
+    color: var(--color-text-primary);
+  }
+
+  /* Non-homepage: always solid */
+  header.nav-solid[data-scrolled="false"] {
+    background: rgba(240, 233, 222, 0.85);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom-color: rgba(207, 195, 176, 0.5);
+  }
+  header.nav-solid[data-scrolled="false"] .nav-logo {
+    color: var(--color-text-primary);
+  }
+  header.nav-solid[data-scrolled="false"] .nav-link-default {
+    color: var(--color-text-muted);
+  }
+  header.nav-solid[data-scrolled="false"] .nav-link-default:hover {
+    color: var(--color-text-primary);
+  }
+</style>
+
 <script>
   const btn = document.getElementById("mobile-menu-btn");
   const menu = document.getElementById("mobile-menu");
+  const header = document.getElementById("site-header");
 
-  btn?.addEventListener("click", () => {
-    menu?.classList.toggle("hidden");
+  // Detect if we're on the homepage (has dark hero)
+  const hasDarkHero = !!document.querySelector("section.dark-section:first-of-type");
+  if (!hasDarkHero && header) {
+    header.classList.add("nav-solid");
+  }
+
+  // Scroll handler
+  function onScroll() {
+    const scrolled = window.scrollY > 60;
+    header?.setAttribute("data-scrolled", String(scrolled));
+  }
+  window.addEventListener("scroll", onScroll, { passive: true });
+  onScroll();
+
+  function toggleMenu(open?: boolean) {
+    const isHidden = menu?.classList.contains("hidden");
+    const shouldOpen = open ?? isHidden;
+    menu?.classList.toggle("hidden", !shouldOpen);
+    btn?.setAttribute("aria-expanded", String(shouldOpen));
+  }
+
+  btn?.addEventListener("click", () => toggleMenu());
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && !menu?.classList.contains("hidden")) {
+      toggleMenu(false);
+      btn?.focus();
+    }
+  });
+
+  document.addEventListener("click", (e) => {
+    if (!menu?.classList.contains("hidden") && !header?.contains(e.target as Node)) {
+      toggleMenu(false);
+    }
   });
 </script>

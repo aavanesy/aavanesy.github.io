@@ -1,37 +1,154 @@
 @import "tailwindcss";
 
 @theme {
-  --font-sans: "Inter", system-ui, sans-serif;
-  --color-primary: #2563eb;
-  --color-primary-dark: #1d4ed8;
-  --color-accent: #0ea5e9;
+  --font-sans: "Plus Jakarta Sans", system-ui, sans-serif;
+  --font-serif: "Playfair Display", Georgia, serif;
+
+  --color-primary: #2C3E2D;
+  --color-primary-dark: #1E2D1F;
+  --color-primary-light: #3A5139;
+  --color-accent: #B8963E;
+  --color-accent-dark: #9A7D2E;
+  --color-accent-light: #D4B255;
+
+  --color-text-primary: #2A2118;
+  --color-text-secondary: #5C4D3C;
+  --color-text-muted: #8C7B68;
+  --color-bg-base: #F0E9DE;
+  --color-bg-surface: #F8F4ED;
+  --color-bg-warm: #E6DDD0;
+  --color-bg-subtle: #DDD3C5;
+  --color-bg-dark: #171410;
+  --color-bg-dark-deep: #0F0D0A;
+  --color-bg-dark-border: #2E2820;
+  --color-border: #CFC3B0;
+
+  --radius-sm: 2px;
+  --radius-md: 3px;
+  --radius-lg: 6px;
+
+  --shadow-sm: 0 1px 3px rgba(42, 33, 24, 0.08);
+  --shadow-md: 0 2px 8px rgba(42, 33, 24, 0.10), 0 1px 3px rgba(42, 33, 24, 0.06);
+  --shadow-lg: 0 4px 16px rgba(42, 33, 24, 0.12), 0 2px 4px rgba(42, 33, 24, 0.06);
 }
 
-html {
-  scroll-behavior: smooth;
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
 }
 
 body {
   font-family: var(--font-sans);
-  @apply bg-slate-50 text-slate-800 antialiased;
+  color: var(--color-text-primary);
+  background-color: var(--color-bg-base);
+  background-image: url("/light_concept_2.png");
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  background-blend-mode: overlay;
+  @apply antialiased;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-serif);
+  letter-spacing: -0.02em;
 }
 
 .gradient-text {
-  @apply bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent;
+  color: var(--color-accent);
 }
 
 .card {
-  @apply bg-white rounded-2xl shadow-sm border border-slate-100 p-6 transition-all duration-300 hover:shadow-md hover:border-slate-200;
+  background: var(--color-bg-surface);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--color-border);
+  @apply p-6 transition-all duration-300;
+}
+.card:hover {
+  box-shadow: var(--shadow-md);
 }
 
 .btn-primary {
-  @apply inline-flex items-center gap-2 px-6 py-3 bg-blue-600 text-white font-medium rounded-full transition-all duration-300 hover:bg-blue-700 hover:shadow-lg hover:shadow-blue-500/25;
+  border-radius: var(--radius-md);
+  background: var(--color-accent);
+  color: var(--color-bg-dark-deep);
+  transition: transform 80ms ease-out, box-shadow 80ms ease-out, background 200ms ease;
+  @apply inline-flex items-center gap-2 px-6 py-3 font-semibold;
+}
+.btn-primary:hover {
+  background: var(--color-accent-light);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+.btn-primary:active {
+  transform: scale(0.97);
+  box-shadow: var(--shadow-sm);
 }
 
 .btn-secondary {
-  @apply inline-flex items-center gap-2 px-6 py-3 bg-slate-100 text-slate-700 font-medium rounded-full transition-all duration-300 hover:bg-slate-200;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+  background: var(--color-bg-surface);
+  color: var(--color-text-primary);
+  transition: transform 80ms ease-out, box-shadow 80ms ease-out, background 200ms ease, border-color 200ms ease;
+  @apply inline-flex items-center gap-2 px-6 py-3 font-medium;
+}
+.btn-secondary:hover {
+  border-color: var(--color-accent);
+  background: var(--color-bg-warm);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-sm);
+}
+.btn-secondary:active {
+  transform: scale(0.97);
 }
 
 .section-title {
-  @apply text-3xl font-bold text-slate-900 mb-8;
+  font-family: var(--font-serif);
+  letter-spacing: -0.02em;
+  color: var(--color-text-primary);
+  @apply text-3xl mb-8;
+}
+
+.dark-section {
+  background-color: var(--color-bg-dark);
+  background-image: url("/dark_concept.png");
+  background-size: cover;
+  background-position: center;
+  color: #D5C9B8;
+}
+.dark-section h1, .dark-section h2, .dark-section h3 {
+  color: #F8F4ED;
+}
+
+.green-section {
+  background-color: #1a3a2a;
+  background-image: url("/green_1.png");
+  background-size: cover;
+  background-position: center;
+  color: #C5D5C8;
+}
+.green-section h1, .green-section h2, .green-section h3 {
+  color: #E8F0EA;
+}
+
+/* Code blocks: prevent horizontal overflow on mobile */
+pre, code {
+  max-width: 100%;
+}
+pre {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Smooth section transitions */
+section {
+  position: relative;
 }

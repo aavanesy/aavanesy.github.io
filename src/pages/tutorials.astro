@@ -27,30 +27,14 @@ const currentTutorial = tutorials[0];
       <div class="flex flex-col lg:flex-row gap-8">
         <!-- Sidebar -->
         <aside class="lg:w-64 flex-shrink-0 lg:sticky lg:top-24 lg:self-start space-y-6">
-          <!-- Workshop CTA (Top of sidebar) -->
-          <a
-            href="/workshops"
-            class="block p-4 rounded-xl bg-slate-900 text-white hover:bg-slate-800 transition-colors"
-          >
-            <span class="text-xs text-green-400 font-medium uppercase tracking-wide">Free Workshop</span>
-            <h3 class="font-semibold mt-1 mb-2">Build a Crisis-Proof Portfolio</h3>
-            <p class="text-slate-400 text-sm mb-3">March 12 · Live · 45 min</p>
-            <span class="inline-flex items-center gap-1 text-sm text-white font-medium">
-              Learn more
-              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-              </svg>
-            </span>
-          </a>
-
           <!-- Tutorials Nav -->
           <div>
-            <h2 class="text-sm font-semibold text-slate-500 uppercase tracking-wide mb-4">Tutorials</h2>
+            <h2 class="text-sm font-semibold text-text-muted uppercase tracking-wide mb-4">Tutorials</h2>
             <nav class="space-y-2">
               {tutorials.map((tutorial) => (
                 <a
                   href={`/tutorials#${tutorial.slug}`}
-                  class="block px-4 py-3 rounded-xl bg-blue-50 border border-blue-100 text-slate-900 font-medium"
+                  class="block px-4 py-3 rounded-sm bg-bg-warm border border-border text-text-primary font-medium"
                 >
                   {tutorial.title}
                 </a>
@@ -60,12 +44,12 @@ const currentTutorial = tutorials[0];
 
           <!-- Resources Nav -->
           <div>
-            <h2 class="text-sm font-semibold text-slate-500 uppercase tracking-wide mb-4">Resources</h2>
+            <h2 class="text-sm font-semibold text-text-muted uppercase tracking-wide mb-4">Resources</h2>
             <nav class="space-y-2">
               {resources.map((resource) => (
                 <a
                   href={resource.href}
-                  class="block px-4 py-3 rounded-xl bg-red-50 border border-red-100 text-slate-900 font-medium"
+                  class="block px-4 py-3 rounded-sm bg-bg-warm border border-border text-text-primary font-medium"
                 >
                   {resource.title}
                 </a>
@@ -79,37 +63,37 @@ const currentTutorial = tutorials[0];
           <!-- Tutorial Content -->
           <article id={currentTutorial.slug} class="card">
             <div class="flex items-center gap-3 mb-6">
-              <div class="w-12 h-12 rounded-xl bg-blue-100 flex items-center justify-center">
-                <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div class="w-8 h-8 rounded-sm bg-bg-subtle flex items-center justify-center">
+                <svg class="w-4 h-4 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 17h8m0 0V9m0 8l-8-8-4 4-6-6" />
                 </svg>
               </div>
               <div>
-                <span class="text-sm text-blue-600 font-medium">{currentTutorial.tag}</span>
-                <h1 class="text-2xl font-bold text-slate-900">{currentTutorial.title}</h1>
+                <span class="text-sm text-accent font-medium">{currentTutorial.tag}</span>
+                <h1 class="text-2xl font-bold text-text-primary">{currentTutorial.title}</h1>
               </div>
             </div>
 
-            <p class="text-slate-600 mb-6">
-              Understanding historical drawdowns is essential for building crisis-proof portfolios. In this tutorial, you'll learn how to fetch S&P 500 data and identify every major market crash since 1990 using the <code class="bg-slate-100 px-2 py-0.5 rounded text-sm">PerformanceAnalytics</code> package.
+            <p class="text-text-secondary mb-6">
+              This tutorial walks through fetching S&P 500 data and identifying every major market crash since 1990 using the <code class="bg-bg-subtle px-2 py-0.5 rounded-sm text-sm">PerformanceAnalytics</code> package.
             </p>
 
             <!-- Step 1 -->
             <div class="mb-8">
-              <h3 class="text-lg font-semibold text-slate-900 mb-3">1. Install required packages</h3>
-              <p class="text-slate-600 mb-3">
-                We'll use <code class="bg-slate-100 px-2 py-0.5 rounded text-sm">quantmod</code> for data fetching and <code class="bg-slate-100 px-2 py-0.5 rounded text-sm">PerformanceAnalytics</code> for drawdown analysis:
+              <h3 class="text-lg font-semibold text-text-primary mb-3">1. Install required packages</h3>
+              <p class="text-text-secondary mb-3">
+                We'll use <code class="bg-bg-subtle px-2 py-0.5 rounded-sm text-sm">quantmod</code> for data fetching and <code class="bg-bg-subtle px-2 py-0.5 rounded-sm text-sm">PerformanceAnalytics</code> for drawdown analysis:
               </p>
-              <pre class="bg-slate-900 text-slate-100 rounded-xl p-4 overflow-x-auto text-sm"><code>install.packages(c("quantmod", "PerformanceAnalytics"))</code></pre>
+              <pre class="bg-bg-dark-deep text-[#E0D5C5] rounded-sm p-4 overflow-x-auto text-sm" aria-label="R code: install packages"><code>install.packages(c("quantmod", "PerformanceAnalytics"))</code></pre>
             </div>
 
             <!-- Step 2 -->
             <div class="mb-8">
-              <h3 class="text-lg font-semibold text-slate-900 mb-3">2. Fetch S&P 500 data since 1990</h3>
-              <p class="text-slate-600 mb-3">
+              <h3 class="text-lg font-semibold text-text-primary mb-3">2. Fetch S&P 500 data since 1990</h3>
+              <p class="text-text-secondary mb-3">
                 Download historical data for SPY (S&P 500 ETF) and calculate returns:
               </p>
-              <pre class="bg-slate-900 text-slate-100 rounded-xl p-4 overflow-x-auto text-sm"><code>library(quantmod)
+              <pre class="bg-bg-dark-deep text-[#E0D5C5] rounded-sm p-4 overflow-x-auto text-sm" aria-label="R code: fetch S&amp;P 500 data"><code>library(quantmod)
 library(PerformanceAnalytics)
 
 # Fetch S&P 500 data from 1990
@@ -126,40 +110,40 @@ tail(sp500_returns)</code></pre>
 
             <!-- Step 3 -->
             <div class="mb-8">
-              <h3 class="text-lg font-semibold text-slate-900 mb-3">3. Visualize the drawdown history</h3>
-              <p class="text-slate-600 mb-3">
+              <h3 class="text-lg font-semibold text-text-primary mb-3">3. Visualize the drawdown history</h3>
+              <p class="text-text-secondary mb-3">
                 Plot the underwater chart showing all drawdowns over time:
               </p>
-              <pre class="bg-slate-900 text-slate-100 rounded-xl p-4 overflow-x-auto text-sm"><code># Plot drawdown chart
+              <pre class="bg-bg-dark-deep text-[#E0D5C5] rounded-sm p-4 overflow-x-auto text-sm" aria-label="R code: plot drawdown chart"><code># Plot drawdown chart
 chart.Drawdown(sp500_returns,
                main = "S&P 500 Drawdowns Since 1990",
                colorset = "darkred")</code></pre>
-              <p class="text-slate-500 text-sm mt-3">
+              <p class="text-text-muted text-sm mt-3">
                 This shows every period where the market was below its previous peak. The deeper the red, the worse the drawdown.
               </p>
             </div>
 
             <!-- Step 4 -->
             <div class="mb-8">
-              <h3 class="text-lg font-semibold text-slate-900 mb-3">4. Extract the worst drawdowns</h3>
-              <p class="text-slate-600 mb-3">
+              <h3 class="text-lg font-semibold text-text-primary mb-3">4. Extract the worst drawdowns</h3>
+              <p class="text-text-secondary mb-3">
                 Identify the 10 largest drawdowns with their dates, depth, and recovery time:
               </p>
-              <pre class="bg-slate-900 text-slate-100 rounded-xl p-4 overflow-x-auto text-sm"><code># Get table of worst drawdowns
+              <pre class="bg-bg-dark-deep text-[#E0D5C5] rounded-sm p-4 overflow-x-auto text-sm" aria-label="R code: extract worst drawdowns"><code># Get table of worst drawdowns
 drawdowns <- table.Drawdowns(sp500_returns, top = 10)
 print(drawdowns)</code></pre>
-              <p class="text-slate-500 text-sm mt-3">
+              <p class="text-text-muted text-sm mt-3">
                 This returns: From (start date), Trough (bottom date), To (recovery date), Depth (max loss), Length (days to bottom), To Trough (days to recover), and Recovery (total days underwater).
               </p>
             </div>
 
             <!-- Step 5 -->
             <div class="mb-8">
-              <h3 class="text-lg font-semibold text-slate-900 mb-3">5. Calculate key drawdown statistics</h3>
-              <p class="text-slate-600 mb-3">
+              <h3 class="text-lg font-semibold text-text-primary mb-3">5. Calculate key drawdown statistics</h3>
+              <p class="text-text-secondary mb-3">
                 Get summary statistics for risk assessment:
               </p>
-              <pre class="bg-slate-900 text-slate-100 rounded-xl p-4 overflow-x-auto text-sm"><code># Maximum drawdown
+              <pre class="bg-bg-dark-deep text-[#E0D5C5] rounded-sm p-4 overflow-x-auto text-sm" aria-label="R code: calculate drawdown statistics"><code># Maximum drawdown
 maxDrawdown(sp500_returns)
 
 # Average drawdown
@@ -174,11 +158,11 @@ PainIndex(sp500_returns)</code></pre>
 
             <!-- Step 6 -->
             <div class="mb-8">
-              <h3 class="text-lg font-semibold text-slate-900 mb-3">6. Identify crisis periods</h3>
-              <p class="text-slate-600 mb-3">
+              <h3 class="text-lg font-semibold text-text-primary mb-3">6. Identify crisis periods</h3>
+              <p class="text-text-secondary mb-3">
                 Filter for major crashes (drawdowns exceeding 20%):
               </p>
-              <pre class="bg-slate-900 text-slate-100 rounded-xl p-4 overflow-x-auto text-sm"><code># Get all drawdowns deeper than 20%
+              <pre class="bg-bg-dark-deep text-[#E0D5C5] rounded-sm p-4 overflow-x-auto text-sm" aria-label="R code: identify crisis periods"><code># Get all drawdowns deeper than 20%
 all_drawdowns <- table.Drawdowns(sp500_returns, top = 20)
 major_crashes <- all_drawdowns[all_drawdowns$Depth < -0.20, ]
 print(major_crashes)
@@ -191,14 +175,14 @@ print(major_crashes)
             </div>
 
             <!-- What's Next -->
-            <div class="border-t border-slate-200 pt-6 mt-8">
-              <p class="text-slate-600 mb-6">
+            <div class="border-t border-border pt-6 mt-8">
+              <p class="text-text-secondary mb-6">
                 <strong>Key insight:</strong> The S&P 500 has experienced drawdowns exceeding 20% roughly once every 5-7 years. A crisis-proof portfolio should be designed to either survive these events or benefit from them. This is the foundation of antifragile portfolio construction.
               </p>
               <a
                 href="/files/sp500-drawdowns.Rmd"
                 download
-                class="inline-flex items-center gap-2 px-4 py-2 bg-slate-100 text-slate-700 font-medium rounded-lg hover:bg-slate-200 transition-colors text-sm"
+                class="inline-flex items-center gap-2 px-4 py-2 bg-bg-subtle text-text-secondary font-medium rounded-sm hover:bg-bg-warm transition-colors text-sm"
               >
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
@@ -208,54 +192,19 @@ print(major_crashes)
             </div>
           </article>
 
-          <!-- Bottom CTA -->
-          <div class="mt-8 card bg-slate-900 text-white border-0 overflow-hidden">
-            <div class="flex flex-col lg:flex-row items-center gap-8">
-              <div class="lg:w-1/3 flex-shrink-0">
-                <img
-                  src="/Arkadi.L1.png"
-                  alt="Arkadi Avanesyan"
-                  class="w-full max-w-[240px] mx-auto rounded-xl"
-                />
-              </div>
-              <div class="lg:w-2/3 text-center lg:text-left">
-                <p class="text-slate-400 text-sm font-medium mb-2">Free Live Workshop — March 12, 2026</p>
-                <h2 class="text-2xl font-bold mb-3">Build Your First Crisis-Proof Portfolio</h2>
-                <p class="text-slate-300 mb-4">
-                  Learn the framework I developed over 10 years at Goldman Sachs and Societe Generale. Understand why most portfolios fail in crashes — and how to build one that doesn't.
-                </p>
-                <ul class="text-slate-400 text-sm mb-6 space-y-1">
-                  <li>Classify any asset as Fragile, Robust, or Antifragile</li>
-                  <li>Identify structural flaws that cause panic-selling</li>
-                  <li>45 minutes + live Q&A</li>
-                </ul>
-                <a
-                  href="https://maven.com/p/62cecb/build-your-first-crisis-proof-portfolio"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="inline-flex items-center gap-2 bg-white text-slate-900 font-semibold px-6 py-3 rounded-full hover:bg-slate-100 transition-colors"
-                >
-                  Register Free
-                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                  </svg>
-                </a>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- More Resources -->
-  <section class="py-6 px-6">
+  <section class="py-12 px-6">
     <div class="max-w-6xl mx-auto text-center">
-      <p class="text-slate-600 mb-4">
-        Want more content? Check out my full courses.
+      <p class="text-text-secondary mb-4">
+        Want structured learning? My courses cover these topics in depth.
       </p>
       <a href="/courses" class="btn-secondary">
-        Browse Courses
+        Explore Courses
       </a>
     </div>
   </section>
