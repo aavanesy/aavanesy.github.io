@@ -9,9 +9,9 @@ const navLinks = [
 const currentPath = Astro.url.pathname;
 ---
 
-<header class="fixed top-0 left-0 right-0 z-50 bg-bg-base/80 backdrop-blur-lg border-b border-border/50">
+<header id="site-header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b border-transparent" data-scrolled="false">
   <nav class="max-w-6xl mx-auto px-6 h-14 flex items-center justify-between">
-    <a href="/" class="font-serif italic text-lg text-text-primary hover:text-accent transition-colors">
+    <a href="/" class="font-serif italic text-lg nav-logo transition-colors hover:text-accent">
       A. Avanesyan
     </a>
 
@@ -21,10 +21,10 @@ const currentPath = Astro.url.pathname;
           <a
             href={link.href}
             class:list={[
-              "text-xs uppercase tracking-widest font-medium transition-colors",
+              "text-xs uppercase tracking-widest font-medium transition-colors nav-link",
               currentPath === link.href || (link.href !== "/" && currentPath.startsWith(link.href))
                 ? "text-accent"
-                : "text-text-muted hover:text-text-primary",
+                : "nav-link-default",
             ]}
           >
             {link.label}
@@ -46,7 +46,7 @@ const currentPath = Astro.url.pathname;
     </button>
   </nav>
 
-  <div id="mobile-menu" class="hidden md:hidden border-t border-border/50 bg-bg-base/95 backdrop-blur-lg">
+  <div id="mobile-menu" class="hidden md:hidden border-t border-border/30 bg-bg-base/95 backdrop-blur-lg">
     <ul class="px-6 py-4 space-y-4">
       {navLinks.map((link) => (
         <li>
@@ -67,10 +67,76 @@ const currentPath = Astro.url.pathname;
   </div>
 </header>
 
+<style>
+  /* Nav states */
+  header[data-scrolled="false"] {
+    background: transparent;
+  }
+  header[data-scrolled="false"] .nav-logo {
+    color: #D5C9B8;
+  }
+  header[data-scrolled="false"] .nav-link-default {
+    color: #8A7D6B;
+  }
+  header[data-scrolled="false"] .nav-link-default:hover {
+    color: #D5C9B8;
+  }
+  header[data-scrolled="false"] #mobile-menu-btn {
+    color: #8A7D6B;
+  }
+
+  header[data-scrolled="true"] {
+    background: rgba(240, 233, 222, 0.85);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom-color: rgba(207, 195, 176, 0.5);
+  }
+  header[data-scrolled="true"] .nav-logo {
+    color: var(--color-text-primary);
+  }
+  header[data-scrolled="true"] .nav-link-default {
+    color: var(--color-text-muted);
+  }
+  header[data-scrolled="true"] .nav-link-default:hover {
+    color: var(--color-text-primary);
+  }
+
+  /* Non-homepage: always solid */
+  header.nav-solid[data-scrolled="false"] {
+    background: rgba(240, 233, 222, 0.85);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom-color: rgba(207, 195, 176, 0.5);
+  }
+  header.nav-solid[data-scrolled="false"] .nav-logo {
+    color: var(--color-text-primary);
+  }
+  header.nav-solid[data-scrolled="false"] .nav-link-default {
+    color: var(--color-text-muted);
+  }
+  header.nav-solid[data-scrolled="false"] .nav-link-default:hover {
+    color: var(--color-text-primary);
+  }
+</style>
+
 <script>
   const btn = document.getElementById("mobile-menu-btn");
   const menu = document.getElementById("mobile-menu");
-  const header = document.querySelector("header");
+  const header = document.getElementById("site-header");
+
+  // Detect if we're on the homepage (has dark hero)
+  const hasDarkHero = !!document.querySelector("section.dark-section:first-of-type");
+  if (!hasDarkHero && header) {
+    header.classList.add("nav-solid");
+  }
+
+  // Scroll handler
+  function onScroll() {
+    const scrolled = window.scrollY > 60;
+    header?.setAttribute("data-scrolled", String(scrolled));
+  }
+  window.addEventListener("scroll", onScroll, { passive: true });
+  onScroll();
 
   function toggleMenu(open?: boolean) {
     const isHidden = menu?.classList.contains("hidden");

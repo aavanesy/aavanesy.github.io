@@ -138,3 +138,17 @@ h1, h2, h3 {
 .green-section h1, .green-section h2, .green-section h3 {
   color: #E8F0EA;
 }
+
+/* Code blocks: prevent horizontal overflow on mobile */
+pre, code {
+  max-width: 100%;
+}
+pre {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Smooth section transitions */
+section {
+  position: relative;
+}
