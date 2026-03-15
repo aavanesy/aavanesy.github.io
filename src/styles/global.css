@@ -14,6 +14,8 @@
   --color-bg-base: #FAFAF7;
   --color-bg-surface: #FFFFFF;
   --color-bg-subtle: #F5F5F0;
+  --color-bg-dark: #1A1A2E;
+  --color-bg-dark-border: #2A2A3E;
   --color-border: #E8E5DE;
 
   --radius-sm: 4px;
@@ -25,8 +27,15 @@
   --shadow-lg: 0 4px 8px rgba(0, 0, 0, 0.08), 0 12px 32px rgba(0, 0, 0, 0.12);
 }
 
-html {
-  scroll-behavior: smooth;
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
 }
 
 body {

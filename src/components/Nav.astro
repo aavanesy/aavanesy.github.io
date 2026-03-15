@@ -25,7 +25,7 @@ const currentPath = Astro.url.pathname;
             class:list={[
               "text-sm font-medium transition-colors",
               currentPath === link.href || (link.href !== "/" && currentPath.startsWith(link.href))
-                ? "text-[#1B4332]"
+                ? "text-primary"
                 : "text-slate-600 hover:text-slate-900",
             ]}
           >
@@ -40,6 +40,8 @@ const currentPath = Astro.url.pathname;
       id="mobile-menu-btn"
       class="md:hidden p-2 text-slate-600 hover:text-slate-900"
       aria-label="Toggle menu"
+      aria-expanded="false"
+      aria-controls="mobile-menu"
     >
       <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
@@ -57,7 +59,7 @@ const currentPath = Astro.url.pathname;
             class:list={[
               "block text-sm font-medium transition-colors",
               currentPath === link.href || (link.href !== "/" && currentPath.startsWith(link.href))
-                ? "text-[#1B4332]"
+                ? "text-primary"
                 : "text-slate-600 hover:text-slate-900",
             ]}
           >
@@ -72,8 +74,27 @@ const currentPath = Astro.url.pathname;
 <script>
   const btn = document.getElementById("mobile-menu-btn");
   const menu = document.getElementById("mobile-menu");
+  const header = document.querySelector("header");
 
-  btn?.addEventListener("click", () => {
-    menu?.classList.toggle("hidden");
+  function toggleMenu(open?: boolean) {
+    const isHidden = menu?.classList.contains("hidden");
+    const shouldOpen = open ?? isHidden;
+    menu?.classList.toggle("hidden", !shouldOpen);
+    btn?.setAttribute("aria-expanded", String(shouldOpen));
+  }
+
+  btn?.addEventListener("click", () => toggleMenu());
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && !menu?.classList.contains("hidden")) {
+      toggleMenu(false);
+      btn?.focus();
+    }
+  });
+
+  document.addEventListener("click", (e) => {
+    if (!menu?.classList.contains("hidden") && !header?.contains(e.target as Node)) {
+      toggleMenu(false);
+    }
   });
 </script>

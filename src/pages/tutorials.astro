@@ -84,7 +84,7 @@ const currentTutorial = tutorials[0];
               <p class="text-slate-600 mb-3">
                 We'll use <code class="bg-slate-100 px-2 py-0.5 rounded text-sm">quantmod</code> for data fetching and <code class="bg-slate-100 px-2 py-0.5 rounded text-sm">PerformanceAnalytics</code> for drawdown analysis:
               </p>
-              <pre class="bg-slate-900 text-slate-100 rounded-xl p-4 overflow-x-auto text-sm"><code>install.packages(c("quantmod", "PerformanceAnalytics"))</code></pre>
+              <pre class="bg-slate-900 text-slate-100 rounded-xl p-4 overflow-x-auto text-sm" aria-label="R code: install packages"><code>install.packages(c("quantmod", "PerformanceAnalytics"))</code></pre>
             </div>
 
             <!-- Step 2 -->
@@ -93,7 +93,7 @@ const currentTutorial = tutorials[0];
               <p class="text-slate-600 mb-3">
                 Download historical data for SPY (S&P 500 ETF) and calculate returns:
               </p>
-              <pre class="bg-slate-900 text-slate-100 rounded-xl p-4 overflow-x-auto text-sm"><code>library(quantmod)
+              <pre class="bg-slate-900 text-slate-100 rounded-xl p-4 overflow-x-auto text-sm" aria-label="R code: fetch S&amp;P 500 data"><code>library(quantmod)
 library(PerformanceAnalytics)
 
 # Fetch S&P 500 data from 1990
@@ -114,7 +114,7 @@ tail(sp500_returns)</code></pre>
               <p class="text-slate-600 mb-3">
                 Plot the underwater chart showing all drawdowns over time:
               </p>
-              <pre class="bg-slate-900 text-slate-100 rounded-xl p-4 overflow-x-auto text-sm"><code># Plot drawdown chart
+              <pre class="bg-slate-900 text-slate-100 rounded-xl p-4 overflow-x-auto text-sm" aria-label="R code: plot drawdown chart"><code># Plot drawdown chart
 chart.Drawdown(sp500_returns,
                main = "S&P 500 Drawdowns Since 1990",
                colorset = "darkred")</code></pre>
@@ -129,7 +129,7 @@ chart.Drawdown(sp500_returns,
               <p class="text-slate-600 mb-3">
                 Identify the 10 largest drawdowns with their dates, depth, and recovery time:
               </p>
-              <pre class="bg-slate-900 text-slate-100 rounded-xl p-4 overflow-x-auto text-sm"><code># Get table of worst drawdowns
+              <pre class="bg-slate-900 text-slate-100 rounded-xl p-4 overflow-x-auto text-sm" aria-label="R code: extract worst drawdowns"><code># Get table of worst drawdowns
 drawdowns <- table.Drawdowns(sp500_returns, top = 10)
 print(drawdowns)</code></pre>
               <p class="text-slate-500 text-sm mt-3">
@@ -143,7 +143,7 @@ print(drawdowns)</code></pre>
               <p class="text-slate-600 mb-3">
                 Get summary statistics for risk assessment:
               </p>
-              <pre class="bg-slate-900 text-slate-100 rounded-xl p-4 overflow-x-auto text-sm"><code># Maximum drawdown
+              <pre class="bg-slate-900 text-slate-100 rounded-xl p-4 overflow-x-auto text-sm" aria-label="R code: calculate drawdown statistics"><code># Maximum drawdown
 maxDrawdown(sp500_returns)
 
 # Average drawdown
@@ -162,7 +162,7 @@ PainIndex(sp500_returns)</code></pre>
               <p class="text-slate-600 mb-3">
                 Filter for major crashes (drawdowns exceeding 20%):
               </p>
-              <pre class="bg-slate-900 text-slate-100 rounded-xl p-4 overflow-x-auto text-sm"><code># Get all drawdowns deeper than 20%
+              <pre class="bg-slate-900 text-slate-100 rounded-xl p-4 overflow-x-auto text-sm" aria-label="R code: identify crisis periods"><code># Get all drawdowns deeper than 20%
 all_drawdowns <- table.Drawdowns(sp500_returns, top = 20)
 major_crashes <- all_drawdowns[all_drawdowns$Depth < -0.20, ]
 print(major_crashes)
@@ -198,13 +198,13 @@ print(major_crashes)
   </section>
 
   <!-- More Resources -->
-  <section class="py-6 px-6">
+  <section class="py-12 px-6">
     <div class="max-w-6xl mx-auto text-center">
       <p class="text-slate-600 mb-4">
-        See my full courses for more.
+        Want structured learning? My courses cover these topics in depth.
       </p>
       <a href="/courses" class="btn-secondary">
-        Browse Courses
+        Explore Courses
       </a>
     </div>
   </section>

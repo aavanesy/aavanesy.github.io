@@ -21,9 +21,8 @@ const platforms = [
 ];
 
 const colorClasses = {
-  blue: { bg: "bg-emerald-100", text: "text-emerald-700", border: "border-emerald-200" },
-  cyan: { bg: "bg-amber-100", text: "text-amber-700", border: "border-amber-200" },
-  purple: { bg: "bg-purple-100", text: "text-purple-600", border: "border-purple-200" },
+  cyan: { bg: "bg-amber-100", text: "text-amber-700", hoverClass: "hover:border-amber-200 hover:border" },
+  purple: { bg: "bg-purple-100", text: "text-purple-600", hoverClass: "hover:border-purple-200 hover:border" },
 };
 ---
 
@@ -36,8 +35,12 @@ const colorClasses = {
         <div class="flex-shrink-0">
           <div class="relative">
             <img
-              src="/Arkadi.A.jpg"
+              src="/head_shot.png"
               alt="Arkadi Avanesyan"
+              width="320"
+              height="320"
+              fetchpriority="high"
+              decoding="async"
               class="relative w-64 h-64 lg:w-80 lg:h-80 rounded-lg object-cover shadow-lg ring-4 ring-white"
             />
           </div>
@@ -71,7 +74,7 @@ const colorClasses = {
   </section>
 
   <!-- Courses Section -->
-  <section class="py-6 px-6 bg-white">
+  <section class="py-16 px-6 bg-white">
     <div class="max-w-6xl mx-auto">
       <h2 class="section-title text-center">Courses</h2>
       <div class="grid md:grid-cols-2 gap-6">
@@ -82,7 +85,7 @@ const colorClasses = {
               href={platform.url}
               target="_blank"
               rel="noopener noreferrer"
-              class={`card group hover:${colors.border}`}
+              class:list={["card group", colors.hoverClass]}
             >
               <div class={`w-8 h-8 rounded-md ${colors.bg} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform`}>
                 <svg class={`w-4 h-4 ${colors.text}`} fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" set:html={platform.icon} />
@@ -104,17 +107,17 @@ const colorClasses = {
   </section>
 
   <!-- CTA Section -->
-  <section class="py-6 px-6 bg-[#1A1A2E]">
+  <section class="py-12 px-6 bg-bg-dark">
     <div class="max-w-4xl mx-auto text-center py-8">
       <h2 class="text-3xl lg:text-4xl font-bold text-white mb-4">Start learning</h2>
       <p class="text-slate-300 text-lg mb-8">
         Explore my courses or get in touch about corporate training.
       </p>
       <div class="flex flex-wrap gap-4 justify-center">
-        <a href="/courses" class="inline-flex items-center gap-2 px-6 py-3 bg-white text-[#1B4332] font-medium rounded-lg transition-all hover:shadow-lg">
+        <a href="/courses" class="btn-primary bg-white text-primary hover:bg-slate-100">
           Browse Courses
         </a>
-        <a href="/training" class="inline-flex items-center gap-2 px-6 py-3 bg-[#1B4332]/80 text-white font-medium rounded-lg transition-all hover:bg-[#1B4332]">
+        <a href="/training" class="btn-secondary bg-primary/80 text-white hover:bg-primary">
           Corporate Training
         </a>
       </div>

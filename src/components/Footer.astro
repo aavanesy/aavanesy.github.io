@@ -20,7 +20,7 @@ const socialLinks = [
 ];
 ---
 
-<footer class="bg-[#1A1A2E] text-slate-300">
+<footer class="bg-bg-dark text-slate-300">
   <div class="max-w-6xl mx-auto px-6 py-12">
     <div class="flex flex-col md:flex-row justify-between items-center gap-6">
       <div class="text-center md:text-left">
@@ -32,9 +32,11 @@ const socialLinks = [
         {socialLinks.map((link) => (
           <a
             href={link.href}
-            target="_blank"
-            rel="noopener noreferrer"
-            class="w-10 h-10 flex items-center justify-center rounded-full bg-slate-800 text-slate-400 hover:bg-[#1B4332] hover:text-white transition-all"
+            class:list={[
+              "w-10 h-10 flex items-center justify-center rounded-full text-slate-400 hover:text-white transition-all",
+              link.href.startsWith("mailto:") ? "bg-slate-800 hover:bg-primary" : "bg-slate-800 hover:bg-primary"
+            ]}
+            {...(link.href.startsWith("mailto:") ? {} : { target: "_blank", rel: "noopener noreferrer" })}
             aria-label={link.label}
           >
             <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" set:html={link.icon} />
@@ -43,7 +45,7 @@ const socialLinks = [
       </div>
     </div>
 
-    <div class="mt-8 pt-8 border-t border-[#2A2A3E] text-center text-sm text-slate-500">
+    <div class="mt-8 pt-8 border-t border-bg-dark-border text-center text-sm text-slate-500">
       <p>&copy; {currentYear} Arkadi Avanesyan. All rights reserved.</p>
     </div>
   </div>
