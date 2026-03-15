@@ -25,3 +25,4 @@ other/
 
 # jetbrains setting folder
 .idea/
+.vercel
