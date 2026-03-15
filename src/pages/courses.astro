@@ -18,147 +18,77 @@ const udemyCourses = [
     description: "A simple system for staying organized in tech",
   },
 ];
-
-const platforms = [
-  {
-    name: "Coursera",
-    url: "https://www.coursera.org/instructor/~139312072",
-    students: "70,000+",
-    icon: `<path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>`,
-    color: "blue",
-  },
-  {
-    name: "Udemy",
-    url: "https://www.udemy.com/user/arkadi-10/",
-    students: "8,000+",
-    icon: `<path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>`,
-    color: "purple",
-  },
-  {
-    name: "Codementor",
-    url: "https://www.codementor.io/@aavanesy",
-    students: "850+",
-    icon: `<path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>`,
-    color: "green",
-  },
-];
-
-const colorClasses = {
-  purple: { bg: "bg-purple-100", text: "text-purple-600", hover: "hover:bg-purple-50" },
-  blue: { bg: "bg-emerald-100", text: "text-emerald-700", hover: "hover:bg-emerald-50" },
-  green: { bg: "bg-emerald-100", text: "text-emerald-700", hover: "hover:bg-emerald-50" },
-};
 ---
 
 <Layout title="Online Courses | Arkadi Avanesyan">
   <!-- Hero -->
-  <section class="pt-32 pb-6 px-6">
-    <div class="max-w-4xl mx-auto text-center">
-      <h1 class="text-4xl lg:text-5xl font-bold text-slate-900 mb-6">
-        Online <span class="gradient-text">Courses</span>
+  <section class="pt-32 pb-16 px-6">
+    <div class="max-w-4xl mx-auto">
+      <p class="text-accent tracking-[0.3em] text-xs mb-6 uppercase">Teaching</p>
+      <h1 class="text-4xl lg:text-6xl font-bold text-text-primary mb-8 leading-tight">
+        Online Courses
       </h1>
-      <p class="text-xl text-slate-600 max-w-2xl mx-auto">
+      <p class="text-xl text-text-secondary max-w-2xl leading-relaxed">
         80,000+ students across Coursera, Udemy, and Codementor.
       </p>
     </div>
   </section>
 
-  <!-- Stats -->
-  <section class="py-12 px-6">
-    <div class="max-w-6xl mx-auto">
-      <div class="grid md:grid-cols-3 gap-6">
-        {platforms.map((platform) => {
-          const colors = colorClasses[platform.color as keyof typeof colorClasses];
-          return (
-            <a
-              href={platform.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              class={`card ${colors.hover} group`}
-            >
-              <div class="flex items-center justify-between">
-                <div>
-                  <p class="text-sm text-slate-500 mb-1">{platform.name}</p>
-                  <p class="text-3xl font-bold text-slate-900">{platform.students}</p>
-                  <p class="text-sm text-slate-500">students</p>
-                </div>
-                <div class={`w-10 h-10 rounded-md ${colors.bg} flex items-center justify-center group-hover:scale-110 transition-transform`}>
-                  <svg class={`w-5 h-5 ${colors.text}`} fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" set:html={platform.icon} />
-                </div>
-              </div>
-              <span class={`${colors.text} text-sm mt-4 inline-flex items-center gap-1 group-hover:gap-2 transition-all`}>
-                View Profile
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                </svg>
-              </span>
-            </a>
-          );
-        })}
+  <!-- Platform numbers -->
+  <section class="py-16 px-6">
+    <div class="max-w-4xl mx-auto">
+      <div class="grid md:grid-cols-3 gap-16">
+        <a href="https://www.coursera.org/instructor/~139312072" target="_blank" rel="noopener noreferrer" class="group">
+          <p class="text-text-muted text-xs uppercase tracking-widest mb-3">Coursera</p>
+          <p class="text-5xl font-serif font-bold text-text-primary group-hover:text-accent transition-colors">70,000+</p>
+          <p class="text-text-muted text-sm mt-2">students</p>
+        </a>
+        <a href="https://www.udemy.com/user/arkadi-10/" target="_blank" rel="noopener noreferrer" class="group">
+          <p class="text-text-muted text-xs uppercase tracking-widest mb-3">Udemy</p>
+          <p class="text-5xl font-serif font-bold text-text-primary group-hover:text-accent transition-colors">8,000+</p>
+          <p class="text-text-muted text-sm mt-2">students</p>
+        </a>
+        <a href="https://www.codementor.io/@aavanesy" target="_blank" rel="noopener noreferrer" class="group">
+          <p class="text-text-muted text-xs uppercase tracking-widest mb-3">Codementor</p>
+          <p class="text-5xl font-serif font-bold text-text-primary group-hover:text-accent transition-colors">850+</p>
+          <p class="text-text-muted text-sm mt-2">clients mentored</p>
+        </a>
       </div>
     </div>
   </section>
 
-  <!-- Mentoring Highlight -->
-  <section class="py-12 px-6">
-    <div class="max-w-6xl mx-auto">
-      <div class="card bg-emerald-50 border-emerald-100">
-        <div class="flex flex-col md:flex-row items-center gap-6">
-          <div class="w-16 h-16 rounded-2xl bg-emerald-100 flex items-center justify-center flex-shrink-0">
-            <svg class="w-8 h-8 text-emerald-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
-            </svg>
-          </div>
-          <div>
-            <h3 class="text-xl font-semibold text-slate-900 mb-2">Featured Mentor on Codementor</h3>
-            <p class="text-slate-600">
-              Through codementor.io, I've mentored over <strong>850 clients</strong> in data science, finance and programming,
-              achieving a <strong>4.99/5 rating</strong> and becoming a Featured Mentor for <strong>10 consecutive months</strong> in 2020.
-            </p>
-          </div>
-        </div>
-      </div>
+  <div class="max-w-4xl mx-auto px-6"><div class="h-px bg-border"></div></div>
+
+  <!-- Mentoring -->
+  <section class="py-16 px-6">
+    <div class="max-w-4xl mx-auto">
+      <blockquote class="border-l-2 border-accent pl-8">
+        <p class="text-text-secondary text-lg leading-relaxed italic">
+          Through Codementor, I've mentored over 850 clients in data science, finance and programming,
+          achieving a 4.99/5 rating and becoming a Featured Mentor for 10 consecutive months in 2020.
+        </p>
+      </blockquote>
     </div>
   </section>
 
   <!-- Udemy Courses -->
-  <section class="py-16 px-6 bg-white">
-    <div class="max-w-6xl mx-auto">
-      <div class="flex items-center justify-between mb-8">
-        <h2 class="section-title mb-0">Udemy Courses</h2>
-        <a
-          href="https://www.udemy.com/user/arkadi-10/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="text-emerald-700 hover:text-emerald-800 font-medium text-sm flex items-center gap-1"
-        >
-          View all on Udemy
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-          </svg>
-        </a>
-      </div>
+  <section class="green-section py-24 px-6">
+    <div class="max-w-4xl mx-auto">
+      <p class="text-accent tracking-[0.3em] text-xs mb-6 uppercase">Udemy</p>
+      <h2 class="text-3xl font-bold mb-12">Course Catalog</h2>
 
-      <div class="grid gap-6">
-        {udemyCourses.map((course, index) => (
+      <div class="space-y-0 divide-y divide-[#2A5A3A]">
+        {udemyCourses.map((course) => (
           <a
             href={course.url}
             target="_blank"
             rel="noopener noreferrer"
-            class="card flex flex-col md:flex-row items-start md:items-center gap-4 group"
+            class="group block py-8 first:pt-0 last:pb-0"
           >
-            <div class="w-8 h-8 rounded-md bg-emerald-100 flex items-center justify-center flex-shrink-0 text-emerald-700 font-bold">
-              {index + 1}
-            </div>
-            <div class="flex-1">
-              <h3 class="font-semibold text-slate-900 group-hover:text-emerald-700 transition-colors">
-                {course.title}
-              </h3>
-              <p class="text-slate-500 text-sm mt-1">{course.description}</p>
-            </div>
-            <svg class="w-5 h-5 text-slate-400 group-hover:text-emerald-700 group-hover:translate-x-1 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-            </svg>
+            <h3 class="font-semibold text-[#E8F0EA] group-hover:text-accent transition-colors mb-2 text-lg">
+              {course.title}
+            </h3>
+            <p class="text-[#8BAE90] text-sm">{course.description}</p>
           </a>
         ))}
       </div>
@@ -166,15 +96,13 @@ const colorClasses = {
   </section>
 
   <!-- CTA -->
-  <section class="py-12 px-6">
+  <section class="py-24 px-6">
     <div class="max-w-4xl mx-auto text-center">
-      <h2 class="text-2xl font-bold text-slate-900 mb-4">Need training for your team?</h2>
-      <p class="text-slate-600 mb-6">
+      <h2 class="text-2xl font-bold text-text-primary mb-4">Need training for your team?</h2>
+      <p class="text-text-secondary mb-8">
         I run custom programs for organizations in finance, data science, and automation.
       </p>
-      <a href="/training" class="btn-primary">
-        See corporate training
-      </a>
+      <a href="/training" class="btn-primary">See corporate training</a>
     </div>
   </section>
 </Layout>

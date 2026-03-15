@@ -1,73 +1,46 @@
 ---
 import Layout from "../layouts/Layout.astro";
-
-const platforms = [
-  {
-    name: "Coursera",
-    url: "https://www.coursera.org/instructor/~139312072",
-    description: "Quantitative finance and data science courses",
-    students: "70,000+ students",
-    color: "gold",
-    icon: `<path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>`,
-  },
-  {
-    name: "Udemy",
-    url: "https://www.udemy.com/user/arkadi-10/",
-    description: "R programming, automation, and productivity",
-    students: "8,000+ students",
-    color: "green",
-    icon: `<path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>`,
-  },
-];
-
-const colorClasses = {
-  gold: { bg: "bg-amber-50", text: "text-amber-700", hoverClass: "hover:border-accent" },
-  green: { bg: "bg-emerald-50", text: "text-emerald-700", hoverClass: "hover:border-accent" },
-};
 ---
 
 <Layout title="Arkadi Avanesyan | Finance, Data Science & Technology">
-  <!-- Hero Section - Dark, commanding -->
-  <section class="relative pt-24 pb-20 px-6 dark-section overflow-hidden">
-    <!-- Subtle background texture from office image -->
-    <div class="absolute inset-0 opacity-10">
-      <img src="/office.png" alt="" class="w-full h-full object-cover" aria-hidden="true" />
-    </div>
-    <div class="absolute inset-0 bg-gradient-to-b from-bg-dark/95 via-bg-dark/90 to-bg-dark"></div>
-
-    <div class="relative max-w-6xl mx-auto">
-      <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
-        <!-- Profile Image -->
+  <!-- Hero - full viewport, mixed concept texture -->
+  <section class="relative min-h-screen flex items-center px-6 overflow-hidden" style="background-color: #171410; background-image: url('/mixed.png'); background-size: cover; background-position: center; color: #D5C9B8;">
+    <div class="relative max-w-6xl mx-auto w-full py-24">
+      <div class="flex flex-col lg:flex-row items-center lg:items-end gap-16 lg:gap-24">
+        <!-- Portrait -->
         <div class="flex-shrink-0">
-          <img
-            src="/head_shot.png"
-            alt="Arkadi Avanesyan"
-            width="320"
-            height="320"
-            fetchpriority="high"
-            decoding="async"
-            class="w-56 h-56 lg:w-72 lg:h-72 rounded-lg object-cover shadow-2xl ring-2 ring-accent/30"
-          />
+          <div class="relative">
+            <div class="absolute -inset-3 border border-accent/20"></div>
+            <img
+              src="/head_shot.png"
+              alt="Arkadi Avanesyan"
+              width="320"
+              height="320"
+              fetchpriority="high"
+              decoding="async"
+              class="w-60 h-60 lg:w-80 lg:h-80 object-cover grayscale-[20%]"
+            />
+          </div>
         </div>
 
-        <!-- Hero Content -->
-        <div class="text-center lg:text-left">
-          <p class="text-accent font-medium tracking-wide text-sm mb-4 uppercase">Quantitative Finance & Data Science</p>
-          <h1 class="text-4xl lg:text-6xl font-bold text-white mb-6 leading-tight">
-            Arkadi<br class="hidden lg:block" /> Avanesyan
+        <!-- Content -->
+        <div class="text-center lg:text-left flex-1">
+          <p class="text-accent tracking-[0.3em] text-xs mb-8 uppercase">Quantitative Finance</p>
+          <h1 class="text-5xl lg:text-7xl xl:text-8xl font-bold text-white mb-8 leading-[0.9] tracking-tight">
+            Arkadi<br /> Avanesyan
           </h1>
-          <p class="text-xl text-emerald-100/80 mb-4 max-w-xl">
+          <div class="w-12 h-px bg-accent mb-8 mx-auto lg:mx-0"></div>
+          <p class="text-lg text-[#D5C9B8] mb-6 max-w-lg leading-relaxed">
             10+ years building institutional investment products. My indices were commercialized by Societe Generale across 60+ countries and used by Goldman Sachs and Deutsche Bank in structured products worth over &euro;1.5 billion.
           </p>
-          <p class="text-sm text-emerald-200/50 mb-8 max-w-xl">
-            MSc Quantitative Finance, Solvay Brussels School &middot; BSc Business Engineering, Free University of Brussels
+          <p class="text-sm text-[#8A7D6B] mb-12 max-w-lg">
+            MSc Quantitative Finance, Solvay Brussels School<br />
+            BSc Business Engineering, Free University of Brussels
           </p>
-          <div class="flex flex-wrap gap-4 justify-center lg:justify-start items-center">
-            <a href="/courses" class="inline-flex items-center gap-2 px-6 py-3 bg-accent text-bg-dark-deep font-semibold rounded-md transition-all hover:bg-accent-light hover:shadow-lg active:scale-[0.97]">
-              Browse Courses
-            </a>
-            <a href="mailto:aavanesy@outlook.com" class="inline-flex items-center gap-2 px-6 py-3 border border-emerald-200/20 text-emerald-100 font-medium rounded-md transition-all hover:border-accent/40 hover:text-accent active:scale-[0.97]">
-              Contact Me
+          <div class="flex flex-wrap gap-5 justify-center lg:justify-start">
+            <a href="/courses" class="btn-primary">Browse Courses</a>
+            <a href="mailto:aavanesy@outlook.com" class="text-sm text-[#9A8B78] hover:text-accent transition-colors underline underline-offset-4 decoration-[#9A8B78]/30 hover:decoration-accent/50 py-3">
+              Contact
             </a>
           </div>
         </div>
@@ -75,62 +48,101 @@ const colorClasses = {
     </div>
   </section>
 
-  <!-- Credibility bar -->
-  <section class="py-6 px-6 bg-bg-warm border-b border-border">
-    <div class="max-w-6xl mx-auto flex flex-wrap justify-center gap-x-12 gap-y-2 text-sm text-text-muted">
-      <span>80,000+ students taught</span>
-      <span class="hidden sm:inline text-border">|</span>
-      <span>Societe Generale &middot; Goldman Sachs &middot; Deutsche Bank</span>
-      <span class="hidden sm:inline text-border">|</span>
-      <span>HSBC &middot; World Bank trainer</span>
+  <!-- Credibility band - green textured -->
+  <section class="green-section py-10 px-6">
+    <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+      <p class="tracking-[0.25em] text-xs uppercase text-[#8BAE90]">
+        Societe Generale &middot; Goldman Sachs &middot; Deutsche Bank &middot; HSBC &middot; World Bank
+      </p>
+      <p class="text-sm text-[#C5D5C8] font-serif italic">80,000+ students taught worldwide</p>
     </div>
   </section>
 
-  <!-- Courses Section -->
-  <section class="py-20 px-6">
-    <div class="max-w-6xl mx-auto">
-      <h2 class="section-title text-center">Courses</h2>
-      <div class="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto">
-        {platforms.map((platform) => {
-          const colors = colorClasses[platform.color as keyof typeof colorClasses];
-          return (
-            <a
-              href={platform.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              class:list={["card group", colors.hoverClass]}
-            >
-              <div class={`w-8 h-8 rounded-md ${colors.bg} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform`}>
-                <svg class={`w-4 h-4 ${colors.text}`} fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" set:html={platform.icon} />
-              </div>
-              <h3 class="font-semibold text-text-primary mb-1">{platform.name}</h3>
-              <p class="text-text-muted text-sm mb-3">{platform.description}</p>
-              <span class={`${colors.text} text-sm font-medium`}>{platform.students}</span>
-              <span class={`${colors.text} text-sm mt-3 flex items-center gap-1 group-hover:gap-2 transition-all`}>
-                View
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                </svg>
-              </span>
-            </a>
-          );
-        })}
+  <!-- Courses - editorial -->
+  <section class="py-32 px-6">
+    <div class="max-w-4xl mx-auto">
+      <span class="font-serif italic text-accent text-sm">01</span>
+      <h2 class="text-4xl lg:text-5xl font-bold text-text-primary mt-3 mb-16 leading-tight">Courses</h2>
+
+      <div class="space-y-16">
+        <a href="https://www.coursera.org/instructor/~139312072" target="_blank" rel="noopener noreferrer" class="group block">
+          <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-3">
+            <div>
+              <p class="text-text-muted text-xs uppercase tracking-widest mb-2">Coursera</p>
+              <p class="text-5xl lg:text-6xl font-serif font-bold text-text-primary group-hover:text-accent transition-colors">70,000+</p>
+            </div>
+            <span class="text-accent text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity pb-2">
+              View courses &rarr;
+            </span>
+          </div>
+          <p class="text-text-secondary max-w-md">Quantitative finance and data science courses for professionals and students.</p>
+          <div class="w-full h-px bg-border mt-8"></div>
+        </a>
+
+        <a href="https://www.udemy.com/user/arkadi-10/" target="_blank" rel="noopener noreferrer" class="group block">
+          <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-3">
+            <div>
+              <p class="text-text-muted text-xs uppercase tracking-widest mb-2">Udemy</p>
+              <p class="text-5xl lg:text-6xl font-serif font-bold text-text-primary group-hover:text-accent transition-colors">8,000+</p>
+            </div>
+            <span class="text-accent text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity pb-2">
+              View courses &rarr;
+            </span>
+          </div>
+          <p class="text-text-secondary max-w-md">R programming, automation, and productivity for working professionals.</p>
+          <div class="w-full h-px bg-border mt-8"></div>
+        </a>
       </div>
     </div>
   </section>
 
-  <!-- CTA Section -->
-  <section class="py-16 px-6 dark-section">
-    <div class="max-w-4xl mx-auto text-center py-8">
-      <h2 class="text-3xl lg:text-4xl font-bold text-white mb-4">Start learning</h2>
-      <p class="text-emerald-100/70 text-lg mb-8">
+  <!-- Training preview - green accent -->
+  <section class="green-section py-24 px-6">
+    <div class="max-w-4xl mx-auto">
+      <span class="font-serif italic text-accent text-sm">02</span>
+      <h2 class="text-4xl lg:text-5xl font-bold mt-3 mb-8 leading-tight">Corporate Training</h2>
+      <p class="text-lg text-[#C5D5C8] max-w-2xl mb-12 leading-relaxed">
+        I've trained teams at HSBC, The World Bank, and Aigora in analytics, data science, and automation. I build custom programs around your team's specific needs.
+      </p>
+      <a href="/training" class="text-sm text-accent hover:text-accent-light transition-colors underline underline-offset-4 decoration-accent/30 hover:decoration-accent">
+        Learn about training &rarr;
+      </a>
+    </div>
+  </section>
+
+  <!-- Resources preview -->
+  <section class="py-32 px-6">
+    <div class="max-w-4xl mx-auto">
+      <span class="font-serif italic text-accent text-sm">03</span>
+      <h2 class="text-4xl lg:text-5xl font-bold text-text-primary mt-3 mb-16 leading-tight">Resources</h2>
+
+      <div class="grid md:grid-cols-2 gap-12">
+        <a href="/quant-r" class="group block">
+          <p class="text-text-muted text-xs uppercase tracking-widest mb-3">Free Series</p>
+          <h3 class="text-2xl font-bold text-text-primary group-hover:text-accent transition-colors mb-3">Quant R</h3>
+          <p class="text-text-secondary text-sm leading-relaxed">Investing truths verified with R code. Concept-first lessons that prove what Wall Street won't tell you.</p>
+        </a>
+
+        <a href="/tutorials" class="group block">
+          <p class="text-text-muted text-xs uppercase tracking-widest mb-3">Tutorial</p>
+          <h3 class="text-2xl font-bold text-text-primary group-hover:text-accent transition-colors mb-3">S&P 500 Drawdowns</h3>
+          <p class="text-text-secondary text-sm leading-relaxed">Use PerformanceAnalytics in R to identify every major market crash since 1990.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="green-section py-32 px-6">
+    <div class="max-w-4xl mx-auto text-center">
+      <p class="text-accent tracking-[0.3em] text-xs mb-6 uppercase">Get started</p>
+      <h2 class="text-4xl lg:text-5xl font-bold mb-6 leading-tight">Start learning</h2>
+      <p class="text-[#8BAE90] text-lg mb-12 max-w-lg mx-auto">
         Explore my courses or get in touch about corporate training.
       </p>
-      <div class="flex flex-wrap gap-4 justify-center">
-        <a href="/courses" class="inline-flex items-center gap-2 px-6 py-3 bg-accent text-bg-dark-deep font-semibold rounded-md transition-all hover:bg-accent-light hover:shadow-lg active:scale-[0.97]">
-          Browse Courses
-        </a>
-        <a href="/training" class="inline-flex items-center gap-2 px-6 py-3 border border-emerald-200/20 text-emerald-100 font-medium rounded-md transition-all hover:border-accent/40 hover:text-accent active:scale-[0.97]">
+      <div class="flex flex-wrap gap-5 justify-center">
+        <a href="/courses" class="btn-primary">Browse Courses</a>
+        <a href="/training" class="text-sm text-[#8BAE90] hover:text-accent transition-colors underline underline-offset-4 decoration-[#8BAE90]/30 hover:decoration-accent/50 py-3">
           Corporate Training
         </a>
       </div>
