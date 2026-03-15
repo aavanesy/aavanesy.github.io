@@ -5,17 +5,17 @@ const udemyCourses = [
   {
     title: "Programming Automation with R and RStudio - Complete Guide",
     url: "https://www.udemy.com/course/complete-guide-to-automation-with-r-in-2021/?referralCode=39E8E56D2D13D75FE9DF",
-    description: "Master automation techniques with R programming",
+    description: "Automate repetitive tasks with R and RStudio",
   },
   {
     title: "ChatGPT & Copilot for Python & R Data Science Projects",
     url: "https://www.udemy.com/course/ai-powered-data-science-projects-with-chatgpt-copilot/?referralCode=3E554B3C7C3E5859C201",
-    description: "Leverage AI tools for data science workflows",
+    description: "Use ChatGPT and Copilot in real data science projects",
   },
   {
     title: "Minimalist Framework to be Organized and Productive in Tech",
     url: "https://www.udemy.com/course/miminalist-framework-to-be-organized-and-productive-in-tech/?referralCode=F466AD2E75AB662FD278",
-    description: "Boost your productivity with proven frameworks",
+    description: "A simple system for staying organized in tech",
   },
 ];
 
@@ -45,20 +45,20 @@ const platforms = [
 
 const colorClasses = {
   purple: { bg: "bg-purple-100", text: "text-purple-600", hover: "hover:bg-purple-50" },
-  blue: { bg: "bg-blue-100", text: "text-blue-600", hover: "hover:bg-blue-50" },
-  green: { bg: "bg-green-100", text: "text-green-600", hover: "hover:bg-green-50" },
+  blue: { bg: "bg-emerald-100", text: "text-emerald-700", hover: "hover:bg-emerald-50" },
+  green: { bg: "bg-emerald-100", text: "text-emerald-700", hover: "hover:bg-emerald-50" },
 };
 ---
 
 <Layout title="Online Courses | Arkadi Avanesyan">
   <!-- Hero -->
-  <section class="pt-32 pb-6 px-6 bg-gradient-to-b from-slate-50 to-white">
+  <section class="pt-32 pb-6 px-6">
     <div class="max-w-4xl mx-auto text-center">
       <h1 class="text-4xl lg:text-5xl font-bold text-slate-900 mb-6">
         Online <span class="gradient-text">Courses</span>
       </h1>
       <p class="text-xl text-slate-600 max-w-2xl mx-auto">
-        Teaching quantitative finance and data science to over 80,000 students worldwide across Coursera, Udemy, and Codementor.
+        80,000+ students across Coursera, Udemy, and Codementor.
       </p>
     </div>
   </section>
@@ -82,8 +82,8 @@ const colorClasses = {
                   <p class="text-3xl font-bold text-slate-900">{platform.students}</p>
                   <p class="text-sm text-slate-500">students</p>
                 </div>
-                <div class={`w-14 h-14 rounded-xl ${colors.bg} flex items-center justify-center group-hover:scale-110 transition-transform`}>
-                  <svg class={`w-7 h-7 ${colors.text}`} fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" set:html={platform.icon} />
+                <div class={`w-10 h-10 rounded-md ${colors.bg} flex items-center justify-center group-hover:scale-110 transition-transform`}>
+                  <svg class={`w-5 h-5 ${colors.text}`} fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" set:html={platform.icon} />
                 </div>
               </div>
               <span class={`${colors.text} text-sm mt-4 inline-flex items-center gap-1 group-hover:gap-2 transition-all`}>
@@ -102,10 +102,10 @@ const colorClasses = {
   <!-- Mentoring Highlight -->
   <section class="py-6 px-6">
     <div class="max-w-6xl mx-auto">
-      <div class="card bg-gradient-to-br from-green-50 to-emerald-50 border-green-100">
+      <div class="card bg-emerald-50 border-emerald-100">
         <div class="flex flex-col md:flex-row items-center gap-6">
-          <div class="w-16 h-16 rounded-2xl bg-green-100 flex items-center justify-center flex-shrink-0">
-            <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <div class="w-16 h-16 rounded-2xl bg-emerald-100 flex items-center justify-center flex-shrink-0">
+            <svg class="w-8 h-8 text-emerald-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
             </svg>
           </div>
@@ -130,7 +130,7 @@ const colorClasses = {
           href="https://www.udemy.com/user/arkadi-10/"
           target="_blank"
           rel="noopener noreferrer"
-          class="text-blue-600 hover:text-blue-700 font-medium text-sm flex items-center gap-1"
+          class="text-emerald-700 hover:text-emerald-800 font-medium text-sm flex items-center gap-1"
         >
           View all on Udemy
           <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -147,16 +147,16 @@ const colorClasses = {
             rel="noopener noreferrer"
             class="card flex flex-col md:flex-row items-start md:items-center gap-4 group"
           >
-            <div class="w-12 h-12 rounded-xl bg-purple-100 flex items-center justify-center flex-shrink-0 text-purple-600 font-bold">
+            <div class="w-8 h-8 rounded-md bg-emerald-100 flex items-center justify-center flex-shrink-0 text-emerald-700 font-bold">
               {index + 1}
             </div>
             <div class="flex-1">
-              <h3 class="font-semibold text-slate-900 group-hover:text-blue-600 transition-colors">
+              <h3 class="font-semibold text-slate-900 group-hover:text-emerald-700 transition-colors">
                 {course.title}
               </h3>
               <p class="text-slate-500 text-sm mt-1">{course.description}</p>
             </div>
-            <svg class="w-5 h-5 text-slate-400 group-hover:text-blue-600 group-hover:translate-x-1 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg class="w-5 h-5 text-slate-400 group-hover:text-emerald-700 group-hover:translate-x-1 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
             </svg>
           </a>
@@ -168,12 +168,12 @@ const colorClasses = {
   <!-- CTA -->
   <section class="py-6 px-6">
     <div class="max-w-4xl mx-auto text-center">
-      <h2 class="text-2xl font-bold text-slate-900 mb-4">Need Custom Training?</h2>
+      <h2 class="text-2xl font-bold text-slate-900 mb-4">Need training for your team?</h2>
       <p class="text-slate-600 mb-6">
-        I offer corporate training programs tailored to your organization's needs.
+        I run custom programs for organizations in finance, data science, and automation.
       </p>
       <a href="/training" class="btn-primary">
-        Explore Corporate Training
+        See corporate training
       </a>
     </div>
   </section>

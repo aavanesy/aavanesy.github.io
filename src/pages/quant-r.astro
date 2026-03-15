@@ -12,7 +12,7 @@ const lessons = [
     slug: "dubai-drop",
     number: "05",
     title: "The Dubai Drop: A 6-Sigma Event",
-    description: "Dubai's stock market dropped 6 standard deviations in 9 days. That shouldn't happen once in the history of the universe.",
+    description: "Dubai's stock market dropped 6 standard deviations in 9 days. A 1-in-1 billion event.",
   },
 ];
 ---
@@ -92,7 +92,7 @@ const lessons = [
           <!-- Lesson 01 Content -->
           <article id="average-returns-lie" data-lesson="average-returns-lie" class="lesson-content hidden card border-l-4 border-l-emerald-500">
             <div class="flex items-center gap-3 mb-6">
-              <div class="w-12 h-12 rounded-xl bg-emerald-100 flex items-center justify-center">
+              <div class="w-8 h-8 rounded-md bg-emerald-100 flex items-center justify-center">
                 <span class="text-emerald-600 font-bold text-lg">01</span>
               </div>
               <div>
@@ -114,7 +114,7 @@ const lessons = [
                 Wall Street reports "average returns" because it sounds better than reality. If you gain 50% then lose 50%, your <strong>AVERAGE</strong> return is 0%. But your <strong>ACTUAL</strong> return is -25%.
               </p>
               <p class="text-slate-600">
-                This isn't a rounding error — it's the difference between retiring comfortably and running out of money.
+                This is not a rounding error. It is the difference between retiring comfortably and running out of money.
               </p>
             </div>
 
@@ -162,7 +162,7 @@ const lessons = [
                   <svg class="w-5 h-5 text-emerald-500 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                     <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
                   </svg>
-                  <span>Demonstrate the "volatility tax" — how swings destroy wealth</span>
+                  <span>Demonstrate the "volatility tax": how swings destroy wealth</span>
                 </li>
               </ul>
             </div>
@@ -234,7 +234,7 @@ cat("Steady portfolio (4% steady): $", round(tail(steady_wealth, 1)), "\n")</cod
           <!-- Lesson 05: Dubai Drop -->
           <article id="dubai-drop" data-lesson="dubai-drop" class="lesson-content hidden card border-l-4 border-l-red-500">
             <div class="flex items-center gap-3 mb-6">
-              <div class="w-12 h-12 rounded-xl bg-red-100 flex items-center justify-center">
+              <div class="w-8 h-8 rounded-md bg-red-100 flex items-center justify-center">
                 <span class="text-red-600 font-bold text-lg">05</span>
               </div>
               <div>
@@ -256,7 +256,7 @@ cat("Steady portfolio (4% steady): $", round(tail(steady_wealth, 1)), "\n")</cod
                 Between February 28 and March 9, 2026, the Dubai Financial Market General Index (DFMGI) dropped <strong>14.1%</strong>. Using 5 years of historical data, this represents a <strong>6 standard deviation</strong> move.
               </p>
               <p class="text-slate-600">
-                Under normal distribution assumptions, a 6-sigma event should occur roughly once every billion observations. Markets regularly produce these "impossible" events — because returns aren't normally distributed.
+                Under normal distribution assumptions, a 6-sigma event should occur roughly once every billion observations. Markets regularly produce these "impossible" events because returns are not normally distributed.
               </p>
             </div>
 
@@ -343,7 +343,7 @@ cat("Steady portfolio (4% steady): $", round(tail(steady_wealth, 1)), "\n")</cod
             <div class="bg-emerald-50 border border-emerald-200 rounded-xl p-6 mb-8">
               <h3 class="text-lg font-semibold text-emerald-800 mb-2">Key Takeaway</h3>
               <p class="text-emerald-700">
-                <strong>Don't trust normal distribution for tail risk.</strong> Fat tails aren't anomalies — they're features of financial markets. Build portfolios that survive "impossible" events.
+                <strong>Do not trust normal distribution for tail risk.</strong> Fat tails are not anomalies. They are features of financial markets. Build portfolios that survive "impossible" events.
               </p>
             </div>
 
@@ -362,41 +362,6 @@ cat("Steady portfolio (4% steady): $", round(tail(steady_wealth, 1)), "\n")</cod
             </div>
           </article>
 
-          <!-- Bottom CTA -->
-          <div class="mt-8 card bg-slate-900 text-white border-0 overflow-hidden">
-            <div class="flex flex-col lg:flex-row items-center gap-8">
-              <div class="lg:w-1/3 flex-shrink-0">
-                <img
-                  src="/Arkadi.L1.png"
-                  alt="Arkadi Avanesyan"
-                  class="w-full max-w-[240px] mx-auto rounded-xl"
-                />
-              </div>
-              <div class="lg:w-2/3 text-center lg:text-left">
-                <p class="text-emerald-400 text-sm font-medium mb-2">Free Live Workshop</p>
-                <h2 class="text-2xl font-bold mb-3">Build Your First Crisis-Proof Portfolio</h2>
-                <p class="text-slate-300 mb-4">
-                  Learn the framework I developed over 10 years at Goldman Sachs and Societe Generale. Understand why most portfolios fail in crashes — and how to build one that doesn't.
-                </p>
-                <ul class="text-slate-400 text-sm mb-6 space-y-1">
-                  <li>Classify any asset as Fragile, Robust, or Antifragile</li>
-                  <li>Identify structural flaws that cause panic-selling</li>
-                  <li>45 minutes + live Q&A</li>
-                </ul>
-                <a
-                  href="https://maven.com/p/62cecb/build-your-first-crisis-proof-portfolio"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="inline-flex items-center gap-2 bg-emerald-500 text-white font-semibold px-6 py-3 rounded-full hover:bg-emerald-400 transition-colors"
-                >
-                  Register Free
-                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                  </svg>
-                </a>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
     </div>

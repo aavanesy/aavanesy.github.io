@@ -3,14 +3,6 @@ import Layout from "../layouts/Layout.astro";
 
 const platforms = [
   {
-    name: "Maven",
-    url: "https://maven.com/p/62cecb/build-your-first-crisis-proof-portfolio",
-    description: "Free Lightning Lesson on crisis-proof portfolios",
-    students: "Live Workshop",
-    color: "blue",
-    icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />`,
-  },
-  {
     name: "Coursera",
     url: "https://www.coursera.org/instructor/~139312072",
     description: "Quantitative finance and data science courses",
@@ -29,8 +21,8 @@ const platforms = [
 ];
 
 const colorClasses = {
-  blue: { bg: "bg-blue-100", text: "text-blue-600", border: "border-blue-200" },
-  cyan: { bg: "bg-cyan-100", text: "text-cyan-600", border: "border-cyan-200" },
+  blue: { bg: "bg-emerald-100", text: "text-emerald-700", border: "border-emerald-200" },
+  cyan: { bg: "bg-amber-100", text: "text-amber-700", border: "border-amber-200" },
   purple: { bg: "bg-purple-100", text: "text-purple-600", border: "border-purple-200" },
 };
 ---
@@ -43,11 +35,10 @@ const colorClasses = {
         <!-- Profile Image -->
         <div class="flex-shrink-0">
           <div class="relative">
-            <div class="absolute inset-0 bg-gradient-to-br from-blue-500 to-cyan-400 rounded-2xl blur-2xl opacity-20 scale-110"></div>
             <img
               src="/Arkadi.A.jpg"
               alt="Arkadi Avanesyan"
-              class="relative w-64 h-64 lg:w-80 lg:h-80 rounded-2xl object-cover shadow-2xl ring-4 ring-white"
+              class="relative w-64 h-64 lg:w-80 lg:h-80 rounded-lg object-cover shadow-lg ring-4 ring-white"
             />
           </div>
         </div>
@@ -58,7 +49,7 @@ const colorClasses = {
             Hi, I'm <span class="gradient-text">Arkadi Avanesyan</span>
           </h1>
           <p class="text-xl text-slate-600 mb-4 max-w-2xl">
-            Quant Developer and Educator in Finance, Data Science, and Technology.
+            Quant developer. I teach finance, data science, and programming.
           </p>
           <p class="text-lg text-slate-500 mb-4 max-w-2xl">
             10+ years building institutional investment products. My work was commercialized by Societe Generale across 60+ countries and used by Goldman Sachs and Deutsche Bank in structured products worth over €1.5 billion.
@@ -67,13 +58,8 @@ const colorClasses = {
             MSc Quantitative Finance, Solvay Brussels School | BSc Business Engineering, Free University of Brussels
           </p>
           <div class="flex flex-wrap gap-4 justify-center lg:justify-start items-center">
-            <a href="https://maven.com/p/62cecb/build-your-first-crisis-proof-portfolio" target="_blank" rel="noopener noreferrer" class="group inline-flex items-center gap-3 px-6 py-3 bg-gradient-to-r from-green-500 to-emerald-600 text-white font-semibold rounded-full transition-all duration-300 hover:shadow-lg hover:shadow-green-500/25 hover:scale-105">
-              <span class="relative flex h-3 w-3">
-                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span>
-                <span class="relative inline-flex rounded-full h-3 w-3 bg-white"></span>
-              </span>
-              Join Free Workshop
-              <span class="text-green-200 text-sm font-normal">Mar 12</span>
+            <a href="/courses" class="btn-primary">
+              Browse Courses
             </a>
             <a href="mailto:aavanesy@outlook.com" class="btn-secondary">
               Contact Me
@@ -87,8 +73,8 @@ const colorClasses = {
   <!-- Courses Section -->
   <section class="py-6 px-6 bg-white">
     <div class="max-w-6xl mx-auto">
-      <h2 class="section-title text-center">Courses & Workshops</h2>
-      <div class="grid md:grid-cols-3 gap-6">
+      <h2 class="section-title text-center">Courses</h2>
+      <div class="grid md:grid-cols-2 gap-6">
         {platforms.map((platform) => {
           const colors = colorClasses[platform.color as keyof typeof colorClasses];
           return (
@@ -98,8 +84,8 @@ const colorClasses = {
               rel="noopener noreferrer"
               class={`card group hover:${colors.border}`}
             >
-              <div class={`w-12 h-12 rounded-xl ${colors.bg} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform`}>
-                <svg class={`w-6 h-6 ${colors.text}`} fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" set:html={platform.icon} />
+              <div class={`w-8 h-8 rounded-md ${colors.bg} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform`}>
+                <svg class={`w-4 h-4 ${colors.text}`} fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" set:html={platform.icon} />
               </div>
               <h3 class="font-semibold text-slate-900 mb-1">{platform.name}</h3>
               <p class="text-slate-500 text-sm mb-3">{platform.description}</p>
@@ -118,18 +104,18 @@ const colorClasses = {
   </section>
 
   <!-- CTA Section -->
-  <section class="py-6 px-6 bg-gradient-to-br from-slate-800 to-slate-900">
+  <section class="py-6 px-6 bg-[#1A1A2E]">
     <div class="max-w-4xl mx-auto text-center py-8">
-      <h2 class="text-3xl lg:text-4xl font-bold text-white mb-4">Ready to Level Up Your Skills?</h2>
+      <h2 class="text-3xl lg:text-4xl font-bold text-white mb-4">Start learning</h2>
       <p class="text-slate-300 text-lg mb-8">
-        Join my free workshop or explore my online courses.
+        Explore my courses or get in touch about corporate training.
       </p>
       <div class="flex flex-wrap gap-4 justify-center">
-        <a href="/workshops" class="inline-flex items-center gap-2 px-6 py-3 bg-white text-slate-900 font-medium rounded-full transition-all hover:shadow-lg">
-          Free Workshop
-        </a>
-        <a href="/courses" class="inline-flex items-center gap-2 px-6 py-3 bg-slate-700 text-white font-medium rounded-full transition-all hover:bg-slate-600">
+        <a href="/courses" class="inline-flex items-center gap-2 px-6 py-3 bg-white text-[#1B4332] font-medium rounded-lg transition-all hover:shadow-lg">
           Browse Courses
+        </a>
+        <a href="/training" class="inline-flex items-center gap-2 px-6 py-3 bg-[#1B4332]/80 text-white font-medium rounded-lg transition-all hover:bg-[#1B4332]">
+          Corporate Training
         </a>
       </div>
     </div>
