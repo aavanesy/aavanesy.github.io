@@ -7,7 +7,7 @@ const platforms = [
     url: "https://www.coursera.org/instructor/~139312072",
     description: "Quantitative finance and data science courses",
     students: "70,000+ students",
-    color: "cyan",
+    color: "gold",
     icon: `<path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>`,
   },
   {
@@ -15,56 +15,58 @@ const platforms = [
     url: "https://www.udemy.com/user/arkadi-10/",
     description: "R programming, automation, and productivity",
     students: "8,000+ students",
-    color: "purple",
+    color: "green",
     icon: `<path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>`,
   },
 ];
 
 const colorClasses = {
-  cyan: { bg: "bg-amber-100", text: "text-amber-700", hoverClass: "hover:border-amber-200 hover:border" },
-  purple: { bg: "bg-purple-100", text: "text-purple-600", hoverClass: "hover:border-purple-200 hover:border" },
+  gold: { bg: "bg-amber-50", text: "text-amber-700", hoverClass: "hover:border-accent" },
+  green: { bg: "bg-emerald-50", text: "text-emerald-700", hoverClass: "hover:border-accent" },
 };
 ---
 
 <Layout title="Arkadi Avanesyan | Finance, Data Science & Technology">
-  <!-- Hero Section -->
-  <section class="pt-32 pb-6 px-6">
-    <div class="max-w-6xl mx-auto">
-      <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
+  <!-- Hero Section - Dark, commanding -->
+  <section class="relative pt-24 pb-20 px-6 dark-section overflow-hidden">
+    <!-- Subtle background texture from office image -->
+    <div class="absolute inset-0 opacity-10">
+      <img src="/office.png" alt="" class="w-full h-full object-cover" aria-hidden="true" />
+    </div>
+    <div class="absolute inset-0 bg-gradient-to-b from-bg-dark/95 via-bg-dark/90 to-bg-dark"></div>
+
+    <div class="relative max-w-6xl mx-auto">
+      <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
         <!-- Profile Image -->
         <div class="flex-shrink-0">
-          <div class="relative">
-            <img
-              src="/head_shot.png"
-              alt="Arkadi Avanesyan"
-              width="320"
-              height="320"
-              fetchpriority="high"
-              decoding="async"
-              class="relative w-64 h-64 lg:w-80 lg:h-80 rounded-lg object-cover shadow-lg ring-4 ring-white"
-            />
-          </div>
+          <img
+            src="/head_shot.png"
+            alt="Arkadi Avanesyan"
+            width="320"
+            height="320"
+            fetchpriority="high"
+            decoding="async"
+            class="w-56 h-56 lg:w-72 lg:h-72 rounded-lg object-cover shadow-2xl ring-2 ring-accent/30"
+          />
         </div>
 
         <!-- Hero Content -->
         <div class="text-center lg:text-left">
-          <h1 class="text-4xl lg:text-5xl font-bold text-slate-900 mb-4">
-            Hi, I'm <span class="gradient-text">Arkadi Avanesyan</span>
+          <p class="text-accent font-medium tracking-wide text-sm mb-4 uppercase">Quantitative Finance & Data Science</p>
+          <h1 class="text-4xl lg:text-6xl font-bold text-white mb-6 leading-tight">
+            Arkadi<br class="hidden lg:block" /> Avanesyan
           </h1>
-          <p class="text-xl text-slate-600 mb-4 max-w-2xl">
-            Quant developer. I teach finance, data science, and programming.
+          <p class="text-xl text-emerald-100/80 mb-4 max-w-xl">
+            10+ years building institutional investment products. My indices were commercialized by Societe Generale across 60+ countries and used by Goldman Sachs and Deutsche Bank in structured products worth over &euro;1.5 billion.
           </p>
-          <p class="text-lg text-slate-500 mb-4 max-w-2xl">
-            10+ years building institutional investment products. My work was commercialized by Societe Generale across 60+ countries and used by Goldman Sachs and Deutsche Bank in structured products worth over €1.5 billion.
-          </p>
-          <p class="text-sm text-slate-400 mb-6 max-w-2xl">
-            MSc Quantitative Finance, Solvay Brussels School | BSc Business Engineering, Free University of Brussels
+          <p class="text-sm text-emerald-200/50 mb-8 max-w-xl">
+            MSc Quantitative Finance, Solvay Brussels School &middot; BSc Business Engineering, Free University of Brussels
           </p>
           <div class="flex flex-wrap gap-4 justify-center lg:justify-start items-center">
-            <a href="/courses" class="btn-primary">
+            <a href="/courses" class="inline-flex items-center gap-2 px-6 py-3 bg-accent text-bg-dark-deep font-semibold rounded-md transition-all hover:bg-accent-light hover:shadow-lg active:scale-[0.97]">
               Browse Courses
             </a>
-            <a href="mailto:aavanesy@outlook.com" class="btn-secondary">
+            <a href="mailto:aavanesy@outlook.com" class="inline-flex items-center gap-2 px-6 py-3 border border-emerald-200/20 text-emerald-100 font-medium rounded-md transition-all hover:border-accent/40 hover:text-accent active:scale-[0.97]">
               Contact Me
             </a>
           </div>
@@ -73,11 +75,22 @@ const colorClasses = {
     </div>
   </section>
 
+  <!-- Credibility bar -->
+  <section class="py-6 px-6 bg-bg-warm border-b border-border">
+    <div class="max-w-6xl mx-auto flex flex-wrap justify-center gap-x-12 gap-y-2 text-sm text-text-muted">
+      <span>80,000+ students taught</span>
+      <span class="hidden sm:inline text-border">|</span>
+      <span>Societe Generale &middot; Goldman Sachs &middot; Deutsche Bank</span>
+      <span class="hidden sm:inline text-border">|</span>
+      <span>HSBC &middot; World Bank trainer</span>
+    </div>
+  </section>
+
   <!-- Courses Section -->
-  <section class="py-16 px-6 bg-white">
+  <section class="py-20 px-6">
     <div class="max-w-6xl mx-auto">
       <h2 class="section-title text-center">Courses</h2>
-      <div class="grid md:grid-cols-2 gap-6">
+      <div class="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto">
         {platforms.map((platform) => {
           const colors = colorClasses[platform.color as keyof typeof colorClasses];
           return (
@@ -90,8 +103,8 @@ const colorClasses = {
               <div class={`w-8 h-8 rounded-md ${colors.bg} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform`}>
                 <svg class={`w-4 h-4 ${colors.text}`} fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" set:html={platform.icon} />
               </div>
-              <h3 class="font-semibold text-slate-900 mb-1">{platform.name}</h3>
-              <p class="text-slate-500 text-sm mb-3">{platform.description}</p>
+              <h3 class="font-semibold text-text-primary mb-1">{platform.name}</h3>
+              <p class="text-text-muted text-sm mb-3">{platform.description}</p>
               <span class={`${colors.text} text-sm font-medium`}>{platform.students}</span>
               <span class={`${colors.text} text-sm mt-3 flex items-center gap-1 group-hover:gap-2 transition-all`}>
                 View
@@ -107,17 +120,17 @@ const colorClasses = {
   </section>
 
   <!-- CTA Section -->
-  <section class="py-12 px-6 bg-bg-dark">
+  <section class="py-16 px-6 dark-section">
     <div class="max-w-4xl mx-auto text-center py-8">
       <h2 class="text-3xl lg:text-4xl font-bold text-white mb-4">Start learning</h2>
-      <p class="text-slate-300 text-lg mb-8">
+      <p class="text-emerald-100/70 text-lg mb-8">
         Explore my courses or get in touch about corporate training.
       </p>
       <div class="flex flex-wrap gap-4 justify-center">
-        <a href="/courses" class="btn-primary bg-white text-primary hover:bg-slate-100">
+        <a href="/courses" class="inline-flex items-center gap-2 px-6 py-3 bg-accent text-bg-dark-deep font-semibold rounded-md transition-all hover:bg-accent-light hover:shadow-lg active:scale-[0.97]">
           Browse Courses
         </a>
-        <a href="/training" class="btn-secondary bg-primary/80 text-white hover:bg-primary">
+        <a href="/training" class="inline-flex items-center gap-2 px-6 py-3 border border-emerald-200/20 text-emerald-100 font-medium rounded-md transition-all hover:border-accent/40 hover:text-accent active:scale-[0.97]">
           Corporate Training
         </a>
       </div>

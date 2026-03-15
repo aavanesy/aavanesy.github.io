@@ -20,22 +20,19 @@ const socialLinks = [
 ];
 ---
 
-<footer class="bg-bg-dark text-slate-300">
+<footer class="dark-section border-t border-bg-dark-border">
   <div class="max-w-6xl mx-auto px-6 py-12">
     <div class="flex flex-col md:flex-row justify-between items-center gap-6">
       <div class="text-center md:text-left">
-        <p class="font-semibold text-white">Arkadi Avanesyan</p>
-        <p class="text-sm text-slate-400 mt-1">Finance, Data Science & Technology</p>
+        <p class="font-serif font-semibold text-white text-lg">Arkadi Avanesyan</p>
+        <p class="text-sm text-emerald-200/50 mt-1">Finance, Data Science & Technology</p>
       </div>
 
       <div class="flex items-center gap-4">
         {socialLinks.map((link) => (
           <a
             href={link.href}
-            class:list={[
-              "w-10 h-10 flex items-center justify-center rounded-full text-slate-400 hover:text-white transition-all",
-              link.href.startsWith("mailto:") ? "bg-slate-800 hover:bg-primary" : "bg-slate-800 hover:bg-primary"
-            ]}
+            class="w-10 h-10 flex items-center justify-center rounded-full bg-primary-light text-emerald-200/60 hover:bg-accent hover:text-bg-dark-deep transition-all"
             {...(link.href.startsWith("mailto:") ? {} : { target: "_blank", rel: "noopener noreferrer" })}
             aria-label={link.label}
           >
@@ -45,7 +42,7 @@ const socialLinks = [
       </div>
     </div>
 
-    <div class="mt-8 pt-8 border-t border-bg-dark-border text-center text-sm text-slate-500">
+    <div class="mt-8 pt-8 border-t border-bg-dark-border text-center text-sm text-emerald-200/40">
       <p>&copy; {currentYear} Arkadi Avanesyan. All rights reserved.</p>
     </div>
   </div>
