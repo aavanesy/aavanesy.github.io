@@ -14,7 +14,7 @@ const expertise = [
     period: "2012–2019",
     description: "Developed, maintained, and rebalanced quantitative proprietary investable indices. Collaborated with major European banks, including Societe Generale, Deutsche Bank, Goldman Sachs, and BNP Paribas.",
     icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />`,
-    color: "blue",
+    color: "red",
   },
   {
     title: "Data Science",
@@ -35,7 +35,7 @@ const expertise = [
     period: "Since 2020",
     description: "Proficient in creating no-code solutions for business process automation where solutions with code are not an option.",
     icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />`,
-    color: "cyan",
+    color: "slate",
   },
 ];
 
@@ -62,10 +62,10 @@ const clients = [
 
 const colorClasses = {
   green: { bg: "bg-green-100", text: "text-green-600" },
-  blue: { bg: "bg-blue-100", text: "text-blue-600" },
+  red: { bg: "bg-red-100", text: "text-red-600" },
   purple: { bg: "bg-purple-100", text: "text-purple-600" },
   orange: { bg: "bg-orange-100", text: "text-orange-600" },
-  cyan: { bg: "bg-cyan-100", text: "text-cyan-600" },
+  slate: { bg: "bg-slate-200", text: "text-slate-600" },
 };
 ---
 
@@ -114,7 +114,7 @@ const colorClasses = {
         {clients.map((client) => (
           <div class="card flex flex-col md:flex-row gap-6 items-start">
             <div class="flex-shrink-0">
-              <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-blue-600 to-cyan-500 flex items-center justify-center text-white font-bold text-lg">
+              <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-red-600 to-red-500 flex items-center justify-center text-white font-bold text-lg">
                 {client.logo}
               </div>
             </div>
@@ -142,7 +142,7 @@ const colorClasses = {
       </p>
       <a
         href="mailto:aavanesy@outlook.com"
-        class="inline-flex items-center gap-2 px-8 py-4 bg-white text-blue-600 font-medium rounded-full transition-all hover:shadow-lg"
+        class="inline-flex items-center gap-2 px-8 py-4 bg-white text-red-600 font-medium rounded-full transition-all hover:shadow-lg"
       >
         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />

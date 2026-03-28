@@ -1,11 +1,9 @@
 ---
 const navLinks = [
   { href: "/", label: "Home" },
-  { href: "/workshops", label: "Workshops" },
   { href: "/courses", label: "Courses" },
   { href: "/training", label: "Corporate Training" },
-  { href: "/tutorials", label: "Tutorials" },
-  { href: "/quant-r", label: "Quant R" },
+  { href: "/ai-for-finance", label: "AI for Finance" },
 ];
 
 const currentPath = Astro.url.pathname;
@@ -13,7 +11,7 @@ const currentPath = Astro.url.pathname;
 
 <header class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-lg border-b border-slate-100">
   <nav class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-    <a href="/" class="font-bold text-xl text-slate-900 hover:text-blue-600 transition-colors">
+    <a href="/" class="font-bold text-xl text-slate-900 hover:text-red-600 transition-colors">
       Arkadi Avanesyan
     </a>
 
@@ -26,7 +24,7 @@ const currentPath = Astro.url.pathname;
             class:list={[
               "text-sm font-medium transition-colors",
               currentPath === link.href || (link.href !== "/" && currentPath.startsWith(link.href))
-                ? "text-blue-600"
+                ? "text-red-600"
                 : "text-slate-600 hover:text-slate-900",
             ]}
           >
@@ -58,7 +56,7 @@ const currentPath = Astro.url.pathname;
             class:list={[
               "block text-sm font-medium transition-colors",
               currentPath === link.href || (link.href !== "/" && currentPath.startsWith(link.href))
-                ? "text-blue-600"
+                ? "text-red-600"
                 : "text-slate-600 hover:text-slate-900",
             ]}
           >

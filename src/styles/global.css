@@ -2,9 +2,9 @@
 
 @theme {
   --font-sans: "Inter", system-ui, sans-serif;
-  --color-primary: #2563eb;
-  --color-primary-dark: #1d4ed8;
-  --color-accent: #0ea5e9;
+  --color-primary: #DB0011;
+  --color-primary-dark: #a1000d;
+  --color-accent: #9FA1A4;
 }
 
 html {
@@ -17,7 +17,7 @@ body {
 }
 
 .gradient-text {
-  @apply bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent;
+  @apply bg-gradient-to-r from-red-600 to-red-500 bg-clip-text text-transparent;
 }
 
 .card {
@@ -25,7 +25,7 @@ body {
 }
 
 .btn-primary {
-  @apply inline-flex items-center gap-2 px-6 py-3 bg-blue-600 text-white font-medium rounded-full transition-all duration-300 hover:bg-blue-700 hover:shadow-lg hover:shadow-blue-500/25;
+  @apply inline-flex items-center gap-2 px-6 py-3 bg-red-600 text-white font-medium rounded-full transition-all duration-300 hover:bg-red-700 hover:shadow-lg hover:shadow-red-500/25;
 }
 
 .btn-secondary {

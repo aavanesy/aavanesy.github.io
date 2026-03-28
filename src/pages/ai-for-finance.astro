@@ -1,0 +1,138 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const modules = [
+  {
+    title: "Working with Data",
+    description: "Build robust data pipelines from financial sources. Data ingestion, cleaning, transformation, and integration across market feeds, databases, and APIs.",
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4" />`,
+    color: "red",
+  },
+  {
+    title: "Financial Analytics (AI & Code)",
+    description: "Python and R for AI-driven financial analysis. Predictive modeling, time series forecasting, sentiment analysis, and automated pattern recognition.",
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />`,
+    color: "slate",
+  },
+  {
+    title: "Portfolio Management",
+    description: "AI-assisted portfolio construction, optimization, and rebalancing. Modern portfolio theory meets machine learning for smarter allocation decisions.",
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />`,
+    color: "green",
+  },
+  {
+    title: "Scenario Testing",
+    description: "Stress testing, Monte Carlo simulations, and risk analysis powered by AI. Model extreme market conditions and quantify portfolio vulnerabilities.",
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />`,
+    color: "orange",
+  },
+  {
+    title: "Report Generation",
+    description: "Automated financial reports, executive summaries, and investment narratives with AI. From raw data to polished deliverables in minutes, not days.",
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />`,
+    color: "purple",
+  },
+  {
+    title: "Dashboard Development",
+    description: "Interactive dashboards and real-time data visualization. Build monitoring tools that surface insights and drive decision-making across your organization.",
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z" />`,
+    color: "warm",
+  },
+];
+
+const colorClasses = {
+  red: { bg: "bg-red-100", text: "text-red-600" },
+  slate: { bg: "bg-slate-100", text: "text-slate-600" },
+  green: { bg: "bg-green-100", text: "text-green-600" },
+  orange: { bg: "bg-orange-100", text: "text-orange-600" },
+  purple: { bg: "bg-purple-100", text: "text-purple-600" },
+  warm: { bg: "bg-slate-200", text: "text-slate-600" },
+};
+
+const audiences = [
+  {
+    title: "Investment Bankers & Quant Analysts",
+    description: "Automate market analysis, portfolio modeling, and reporting workflows. Spend less time on repetitive tasks and more on high-value decisions.",
+  },
+  {
+    title: "Data Professionals in Finance",
+    description: "Level up from traditional data pipelines to AI-powered analytics. Build intelligent systems that extract insights from financial data at scale.",
+  },
+  {
+    title: "Market & Portfolio Analysts",
+    description: "Use AI to monitor markets, test scenarios, and generate actionable research. From idea generation to risk assessment — faster and more rigorous.",
+  },
+];
+---
+
+<Layout title="AI for Finance | Arkadi Avanesyan">
+  <!-- Hero -->
+  <section class="pt-32 pb-6 px-6 bg-gradient-to-b from-slate-50 to-white">
+    <div class="max-w-4xl mx-auto text-center">
+      <h1 class="text-4xl lg:text-5xl font-bold text-slate-900 mb-6">
+        AI for <span class="gradient-text">Finance</span>
+      </h1>
+      <p class="text-xl text-slate-600 mb-4">
+        Transform financial workflows with AI agents and automation. From data pipelines to executive dashboards — practical skills your team can use immediately.
+      </p>
+      <p class="text-slate-500">
+        Most finance professionals still use AI for basic Q&A and email drafting. This program teaches you to build autonomous agents that analyze markets, manage portfolios, and generate reports.
+      </p>
+    </div>
+  </section>
+
+  <!-- Modules Grid -->
+  <section class="py-6 px-6">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="section-title">What You'll Learn</h2>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {modules.map((item) => {
+          const colors = colorClasses[item.color as keyof typeof colorClasses];
+          return (
+            <div class="card">
+              <div class={`w-12 h-12 rounded-xl ${colors.bg} flex items-center justify-center mb-4`}>
+                <svg class={`w-6 h-6 ${colors.text}`} fill="none" stroke="currentColor" viewBox="0 0 24 24" set:html={item.icon} />
+              </div>
+              <h3 class="font-semibold text-slate-900 mb-2">{item.title}</h3>
+              <p class="text-slate-600 text-sm">{item.description}</p>
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  </section>
+
+  <!-- Who This Is For -->
+  <section class="py-6 px-6 bg-white">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="section-title">Who This Is For</h2>
+      <div class="grid md:grid-cols-3 gap-6">
+        {audiences.map((audience) => (
+          <div class="card">
+            <h3 class="font-semibold text-slate-900 mb-2">{audience.title}</h3>
+            <p class="text-slate-600 text-sm">{audience.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-6 px-6 bg-gradient-to-br from-slate-800 to-slate-900">
+    <div class="max-w-4xl mx-auto text-center">
+      <h2 class="text-3xl lg:text-4xl font-bold text-white mb-4">Bring AI to Your Finance Team</h2>
+      <p class="text-slate-300 text-lg mb-8 max-w-2xl mx-auto">
+        Custom programs tailored to your organization's data, tools, and objectives. Let's discuss how AI can accelerate your financial workflows.
+      </p>
+      <a
+        href="mailto:aavanesy@outlook.com"
+        class="inline-flex items-center gap-2 px-8 py-4 bg-white text-red-600 font-medium rounded-full transition-all hover:shadow-lg"
+      >
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+        </svg>
+        Get in Touch
+      </a>
+    </div>
+  </section>
+</Layout>
